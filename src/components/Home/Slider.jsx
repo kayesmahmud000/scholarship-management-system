@@ -22,9 +22,9 @@ const Slider = () => {
       
     >
        <SwiperSlide> <Banner title={'Find Your Dream Scholarship Today!'} subtitle={' Explore top universities, discover exclusive scholarships, and apply with ease—all in one place.'} img={bannerImg1}/></SwiperSlide>
-      <SwiperSlide><Banner title={'Empower Your Education with the Right Scholarship!'} subtitle={'Search, filter, and apply for scholarships that match your academic goals and qualifications."'} img={bannerImg2}/></SwiperSlide>
+      <SwiperSlide><Banner title={'Empower Your Education with the Right Scholarship!'} subtitle={'Search, filter, and apply for scholarships that match your academic goals and qualifications.'} img={bannerImg2}/></SwiperSlide>
      
-      <SwiperSlide> <Banner title={'Unlock Global Opportunities for Higher Studies!'} subtitle={'Access scholarships from prestigious institutions and take your education to the next level'} img={bannerImg3}/></SwiperSlide>
+      <SwiperSlide> <Banner title={'Unlock Global Opportunities for Higher Studies!'} subtitle={'Access scholarships from prestigious institutions and take your education to the next level.'} img={bannerImg3}/></SwiperSlide>
     </Swiper> 
         </div>
     );
