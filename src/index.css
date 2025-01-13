@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background-color: #1A1423;
+    color: white;
+    overflow-y: scroll;
+}
