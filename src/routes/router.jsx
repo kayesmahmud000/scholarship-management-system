@@ -68,10 +68,10 @@ const router = createBrowserRouter([
                 element:<ManageScholarship/>
             },
            
-            {
-                path:'manageApplication',
-                element:<ManageApplication/>
-            },
+            // {
+            //     path:'manageApplication',
+            //     element:<ManageApplication/>
+            // },
             // moderator menu
             {
                 path:'appliedScholarship',

@@ -62,7 +62,8 @@ const Navbar = () => {
                         </ul>
                        </div>
                    
-                        <button className="btn btn-xs md:px-10 md:pb-1 md:rounded-full bg-white   border-none text-[#1e172b] hover:bg-[#1A1423]  hover:text-white md:text-lg md:font-semibold md:btn-md">Login</button>
+                        <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+          hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button>
                     </div>
                 </div>
             </Container>

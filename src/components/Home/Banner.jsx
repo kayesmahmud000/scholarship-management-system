@@ -17,7 +17,10 @@ const Banner = ({title, subtitle, img}) => {
                            {subtitle}
                         </p>
                       <div className='flex items-center justify-center'>
-                      <Link to={'/allScholar'}> <button className="btn bg-white  md:rounded-full md:px-10 md:pb-1 border-none text-[#1e172b] hover:bg-[#1A1423]  hover:text-white">Explore <FaArrowRight /></button></Link>
+                      <Link to={'/allScholar'}> <button className="btn border-none lg:px-7 lg:py-3 bg-purple-500 text-white font-bold rounded-full 
+          hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
+            Explore <FaArrowRight/>
+          </button></Link>
                       </div>
                     </div>
                     <img
