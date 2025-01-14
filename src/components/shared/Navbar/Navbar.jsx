@@ -3,10 +3,14 @@ import logo from '../../../assets/coin.png'
 import Container from '../../Container';
 import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
+import useAuth from '../../../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
     const [scroll, setScroll] = useState(false);
     const [isOpen, setIsOpen]= useState(false)
+    const [isHovered, setIsHovered]= useState(false)
+    const {signout, user}=useAuth()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,6 +19,17 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const handleLogOut=()=>{
+        signout()
+        .then(() => {
+            toast.success('Logout success')
+        })
+        .catch(err => {
+            // console.log(err)
+        })
+
+    }
 
     const link = <>
         <li><NavLink className={({ isActive }) => isActive ? "text-white underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
@@ -61,9 +76,26 @@ const Navbar = () => {
                            {link}
                         </ul>
                        </div>
-                   
-                       <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+
+                       {
+                        user && user?.email ? <div
+                            className="user-photo relative "
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
+                            <img src={user?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
+                            {isHovered && <div className=' flex justify-center  absolute z-10    gap-3 rounded-xl shadow-md bg-gray-300 top-0 right-0 -left-5  w-fit p-2  flex-col'>
+                                <span className="display-name lg:text-2xl text-start font-bold">{user?.displayName}</span>
+                                <button onClick={handleLogOut} className=' btn btn-sm text-sm  mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Logout</button></div>
+                            }
+                        </div> : <div className='flex gap-4'>
+                        <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button></Link>
+                            <Link to={'/signUp'} ><button className='btn hidden lg:flex btn-xs md:btn-md rounded-full  hover:bg-yellow-300 hover:text-black transition duration-300 text-center border-none px-5 font-bold'>Register</button></Link>
+                        </div>
+                    }
+                   
+                      
                     </div>
                 </div>
             </Container>

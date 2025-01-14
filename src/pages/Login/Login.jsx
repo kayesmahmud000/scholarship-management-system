@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../components/shared/GoogleLogin";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const {signIn}=useAuth()
@@ -18,6 +19,7 @@ const Login = () => {
             //  login user
            await signIn(data?.email, data?.password)
            navigate('/')
+           toast.success('Login success')
 
         }catch (err){
             console.log(err)

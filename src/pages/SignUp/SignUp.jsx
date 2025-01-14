@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../../components/shared/GoogleLogin';
 import useAuth from '../../hooks/useAuth';
+import toast from 'react-hot-toast';
+import { imageUpload, saveUser } from '../../api/utils';
 
 const SignUp = () => {
-    const {createUser}= useAuth()
+    const {createUser, updateUserProfile}= useAuth()
     const {
             register,
             handleSubmit,
@@ -17,16 +19,23 @@ const SignUp = () => {
             const email= data?.email
             const password= data?.password
             const name =data?.name
-            const image= data?.image
+            const imageFile= data?.image[0]
+            console.log(imageFile)
+            const photoURL= await imageUpload(imageFile) 
+            console.log(photoURL)
             try{
                 //create user Account
 
              const result=  await createUser(email, password)
+             await updateUserProfile( name, photoURL)
 
              console.log(result)
+             await saveUser({...result?.user, displayName:name, photoURL})
              navigate('/')
+             toast.success('Sign Up success')
             }catch (err){
                 console.log(err)
+                toast.error(err?.message)
             }
         } 
 
