@@ -10,8 +10,8 @@ const SharedMenu = () => {
         <div>
              <MenuItem
               icon={MdReviews} label='Manage Review' address='/dashboard/manageReview'/>
-              <MenuItem icon={IoMdSchool} label='Add ScholarShip' address='/dashboard/addScholarShip'/>
-              <MenuItem icon={MdManageSearch} label='Manage ScholarShip' address='/dashboard/manageScholarShip'/>
+              <MenuItem icon={IoMdSchool} label='Add Scholarship' address='/dashboard/addScholarShip'/>
+              <MenuItem icon={MdManageSearch} label='Manage Scholarship' address='/dashboard/manageScholarShip'/>
               {/* <MenuItem icon={LuLetterText} label='Manage Applied Application' address='/dashboard/manageApplication'/> */}
         </div>
     );

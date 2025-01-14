@@ -10,7 +10,7 @@ const Navbar = () => {
     const [scroll, setScroll] = useState(false);
     const [isOpen, setIsOpen]= useState(false)
     const [isHovered, setIsHovered]= useState(false)
-    const {signout, user}=useAuth()
+    const {signout, user, setUser}=useAuth()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,6 +24,7 @@ const Navbar = () => {
         signout()
         .then(() => {
             toast.success('Logout success')
+            setUser(null)
         })
         .catch(err => {
             // console.log(err)
@@ -79,15 +80,18 @@ const Navbar = () => {
 
                        {
                         user && user?.email ? <div
+                           
                             className="user-photo relative "
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
                             <img src={user?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
-                            {isHovered && <div className=' flex justify-center  absolute z-10    gap-3 rounded-xl shadow-md bg-gray-300 top-0 right-0 -left-5  w-fit p-2  flex-col'>
+                            {isHovered && <div className=' flex justify-center  absolute z-10    gap-3 rounded-xl shadow-md bg-gray-300 top-10 right-0 -left-5  w-fit p-2  flex-col'>
                                 <span className="display-name lg:text-2xl text-start font-bold">{user?.displayName}</span>
-                                <button onClick={handleLogOut} className=' btn btn-sm text-sm  mr-2 md:mr-4 bg-[#e63746] text-white hover:bg-white hover:text-black'>Logout</button></div>
+                                <button onClick={handleLogOut} className=' btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+          hover:bg-yellow-300 hover:text-black transition duration-300 text-center'>Logout</button></div>
                             }
+                           
                         </div> : <div className='flex gap-4'>
                         <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button></Link>
@@ -106,3 +110,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,9 +1,13 @@
 import React from 'react';
+// import { useForm } from 'react-hook-form';
+import AddScholarFrom from '../../components/Form/AddScholarFrom';
+// import useAuth from '../../hooks/useAuth';
 
 const AddScholarship = () => {
+ 
     return (
         <div>
-            Add Scholar ship
+           <AddScholarFrom ></AddScholarFrom>
         </div>
     );
 };

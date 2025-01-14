@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../../components/shared/GoogleLogin';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
 import { imageUpload, saveUser } from '../../api/utils';
+import { ImSpinner } from 'react-icons/im';
 
 const SignUp = () => {
     const {createUser, updateUserProfile}= useAuth()
+    const [loading, setLoading]=useState(false)
     const {
             register,
             handleSubmit,
@@ -16,6 +18,7 @@ const SignUp = () => {
         } = useForm()
         const navigate= useNavigate()
         const onSubmit =async(data) =>{
+          setLoading(true)
             const email= data?.email
             const password= data?.password
             const name =data?.name
@@ -32,10 +35,13 @@ const SignUp = () => {
              console.log(result)
              await saveUser({...result?.user, displayName:name, photoURL})
              navigate('/')
+             
              toast.success('Sign Up success')
             }catch (err){
                 console.log(err)
                 toast.error(err?.message)
+            }finally{
+              setLoading(false)
             }
         } 
 
@@ -127,12 +133,13 @@ const SignUp = () => {
                 type='submit'
                 className='bg-[#1e172b] w-full rounded-md py-3 text-white'
               >
-                Sign Up
-                {/* {loading ? (
-                  <TbFidgetSpinner className='animate-spin m-auto' />
+                
+                {loading ? (
+                  <ImSpinner className='animate-spin m-auto' />
+                 
                 ) : (
                   'Continue'
-                )} */}
+                )}
               </button>
             </div>
           </form>

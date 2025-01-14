@@ -14,6 +14,8 @@ import ManageApplication from "../pages/SharedPage/ManageApplication";
 import AppliedScholarship from "../pages/Dashboard/Moderator/AppliedScholarship";
 import MyApplication from "../pages/Dashboard/User/MyApplication";
 import MyReview from "../pages/Dashboard/User/MyReview";
+import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/Dashboard/Common/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
     //dashboard
     {
         path:'/dashboard',
-        element:<DashboardLayout/>,
+        element:<PrivateRoute>:<DashboardLayout/></PrivateRoute>,
         children:[
             //admin menu
             {
@@ -90,6 +92,10 @@ const router = createBrowserRouter([
             {
                 path:'profile',
                 element:<Profile/>
+            },
+            {
+                path:'updateProfile',
+                element:<UpdateProfile/>
             },
         ]
     },
