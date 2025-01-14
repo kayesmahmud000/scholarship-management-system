@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/coin.png'
 import Container from '../../Container';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
@@ -62,8 +62,8 @@ const Navbar = () => {
                         </ul>
                        </div>
                    
-                        <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
-          hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button>
+                       <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+          hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button></Link>
                     </div>
                 </div>
             </Container>
