@@ -16,6 +16,7 @@ import MyApplication from "../pages/Dashboard/User/MyApplication";
 import MyReview from "../pages/Dashboard/User/MyReview";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/Dashboard/Common/UpdateProfile";
+import ScholarshipDetails from "../pages/ScholarshipDetails/ScholarshipDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,8 +32,8 @@ const router = createBrowserRouter([
             element:<AllScholar/>
         },
         {
-            path:"scholarshipDetails",
-            element:<AllScholar/>
+            path:"scholarshipDetails/:id",
+            element:<ScholarshipDetails/>
         },
       ]
     },

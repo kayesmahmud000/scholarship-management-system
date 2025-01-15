@@ -6,7 +6,8 @@ import LoadingSpinner from '../../../../components/LoadingSpinner';
 
 const ManageUser = () => {
     const axiosSecure= useAxiosSecure()
-    const {data: allUsers=[], isLoading, refetch }= useQuery({
+    
+    const {data: allUsers=[],  refetch, isLoading, }= useQuery({
         queryKey:['users'],
         queryFn: async()=>{
             const {data}= await axiosSecure.get('/users')

@@ -1,16 +1,17 @@
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
+import { MdDeleteForever } from "react-icons/md";
 
-const UserDataRow = ({ user, refetch, }) => {
+
+const UserDataRow = ({ refetch, user, }) => {
     const axiosSecure =useAxiosSecure()
-    const handleDelete=(id)=>{
-        console.log(id)
-    }
+   
     const handleRoleChange= async(newRole)=>{
         if(user?.role === newRole)return
         console.log(newRole)
 
+        
         try{
             await axiosSecure.patch(`/user/${user?.email}` , {role :newRole })
             refetch()
@@ -19,6 +20,20 @@ const UserDataRow = ({ user, refetch, }) => {
             console.log(err?.response?.data?.massage)
         }
 
+    }
+    const handleDelete= async(id)=>{
+        
+        try{
+            await axiosSecure.delete(`/user/${id}`)
+            toast.success('User deleted successful!')
+            refetch()
+           
+
+
+        }catch (err){
+            console.log(err)
+
+        }
     }
     return (
         <tr>
@@ -43,13 +58,9 @@ const UserDataRow = ({ user, refetch, }) => {
             <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
                 <button
                     onClick={() => handleDelete(user?._id)}
-                    className='relative cursor-pointer inline-block px-3 py-1 font-semibold  leading-tight'
+                    className=' cursor-pointer font-semibold '
                 >
-                    <span
-                        aria-hidden='true'
-                        className='absolute inset-0 rounded-full'
-                    ></span>
-                    <span className='relative'>Delete </span>
+                   <MdDeleteForever size={34} />
                 </button>
                 
             </td>
