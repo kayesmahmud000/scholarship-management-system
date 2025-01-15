@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
+import ApplicationModal from '../../components/Modal/ApplicationModal';
 
 const CheckOutFrom = ({scholar}) => {
     const stripe = useStripe();
@@ -16,6 +17,7 @@ const CheckOutFrom = ({scholar}) => {
   const [processing, setProcessing]= useState(false)
     const axiosSecure= useAxiosSecure()
       const [clientSecret, setClientSecret]=useState('')
+      const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     
       useEffect(()=>{
         if(scholar?.applicationFees>0){
@@ -83,12 +85,14 @@ const CheckOutFrom = ({scholar}) => {
       }
       if(paymentIntent.status=== 'succeeded'){
         toast.success('Payment successful!')
+        setIsEditModalOpen(true)
       }
       console.log(paymentIntent)
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+     <form onSubmit={handleSubmit}>
       <CardElement
         options={{
           style: {
@@ -109,7 +113,15 @@ const CheckOutFrom = ({scholar}) => {
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center'disabled={!stripe || !clientSecret || processing}>
        Payment
       </button>
+     
     </form>
+     <ApplicationModal
+                    isOpen={isEditModalOpen}
+                    scholar={scholar}
+                    setIsEditModalOpen={setIsEditModalOpen}
+                />
+    </>
+   
   );
 };
  export default CheckOutFrom
