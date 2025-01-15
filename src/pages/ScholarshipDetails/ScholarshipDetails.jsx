@@ -99,7 +99,7 @@ const ScholarshipDetails = () => {
 
                 {/* Apply Button */}
                 <div className="mt-8 flex justify-end">
-                 <Link to={'/payment'}>
+                 <Link to={`/payment/${_id}`}>
                  <button className="px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
                         Apply Now <FaArrowRight/>

@@ -21,6 +21,7 @@ import Payment from "../pages/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import SharedRoute from "./SharedRoute";
 import Dashboard from "../pages/Dashboard/Common/Dashboard";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute><ScholarshipDetails/></PrivateRoute>
         },
         {
-            path:'payment',
+            path:'payment/:id',
             element:<PrivateRoute><Payment/></PrivateRoute>
         },
       ]
@@ -110,6 +111,10 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path:'*',
+        element:<ErrorPage></ErrorPage>
+    }
   ]);
   
   export default router
