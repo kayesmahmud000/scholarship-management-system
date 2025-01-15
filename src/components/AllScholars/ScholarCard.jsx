@@ -1,9 +1,11 @@
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ScholarCard = ({ scholarship }) => {
   return (
     <div
       className="relative bg-[#1A1423] text-white p-6 rounded-xl shadow-lg border border-purple-600 
-        hover:shadow-2xl transform hover:scale-105 transition-all duration-500 flex flex-col justify-between h-[500px]"
+        hover:shadow-2xl transform hover:scale-105 transition-all duration-500 flex flex-col justify-between h-[450px]"
     >
       {/* University Logo */}
       <div className="flex flex-col items-center">
@@ -13,7 +15,6 @@ const ScholarCard = ({ scholarship }) => {
           className="w-24 h-24 object-cover rounded-full border-4 border-purple-400"
         />
         {/* Scholarship Title */}
-        <h2 className="text-2xl font-bold text-center mt-4 text-purple-300">{scholarship?.scholarshipName}</h2>
         <p className="text-lg font-medium text-center mt-2 text-purple-400">{scholarship?.universityName}</p>
         <p className="text-center mt-1 text-sm text-gray-300">
           {scholarship?.universityCity}, {scholarship?.universityCountry} 🌍
@@ -32,12 +33,15 @@ const ScholarCard = ({ scholarship }) => {
         <p className="text-sm mt-1 text-gray-400">📅 Posted on: {scholarship?.scholarshipPostDate}</p>
       </div>
       {/* Button Section (Anchored at Bottom) */}
+      <Link to={`/scholarshipDetails/${scholarship._id}`}>
       <div className="mt-auto w-full flex justify-center">
-        <button className="w-[90%] py-3 bg-purple-500 text-white font-bold rounded-full 
+      <button className="w-[90%] py-3 flex items-center justify-center gap-2 bg-purple-500 text-white font-bold rounded-full 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
-          View Details 🚀
+          View Details <FaArrowRight/>
         </button>
+       
       </div>
+        </Link>
     </div>
   );
 };

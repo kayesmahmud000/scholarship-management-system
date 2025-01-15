@@ -17,6 +17,7 @@ import MyReview from "../pages/Dashboard/User/MyReview";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/Dashboard/Common/UpdateProfile";
 import ScholarshipDetails from "../pages/ScholarshipDetails/ScholarshipDetails";
+import Payment from "../pages/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
             path:"scholarshipDetails/:id",
             element:<ScholarshipDetails/>
+        },
+        {
+            path:'payment',
+            element:<Payment/>
         },
       ]
     },
@@ -89,6 +94,8 @@ const router = createBrowserRouter([
                 path:'myReview',
                 element:<MyReview/>
             },
+           
+
           //common menu
             {
                 path:'profile',

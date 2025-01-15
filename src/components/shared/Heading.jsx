@@ -12,7 +12,7 @@ const Heading = ({title, subtitle}) => {
 
            </Fade> */}
             <h1 className='text-4xl font-bold  text-center mt-6'>{title}</h1>
-           <p className='text-center  font-semibold'>{subtitle}</p>
+           <p className='text-center max-w-3xl mx-auto font-semibold'>{subtitle}</p>
         </div>
         </div>
     );
