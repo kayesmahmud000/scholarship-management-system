@@ -18,6 +18,9 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/Dashboard/Common/UpdateProfile";
 import ScholarshipDetails from "../pages/ScholarshipDetails/ScholarshipDetails";
 import Payment from "../pages/Payment/Payment";
+import AdminRoute from "./AdminRoute";
+import SharedRoute from "./SharedRoute";
+import Dashboard from "../pages/Dashboard/Common/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -34,11 +37,11 @@ const router = createBrowserRouter([
         },
         {
             path:"scholarshipDetails/:id",
-            element:<ScholarshipDetails/>
+            element:<PrivateRoute><ScholarshipDetails/></PrivateRoute>
         },
         {
             path:'payment',
-            element:<Payment/>
+            element:<PrivateRoute><Payment/></PrivateRoute>
         },
       ]
     },
@@ -59,21 +62,21 @@ const router = createBrowserRouter([
             //admin menu
             {
                 index: true,
-                element:<ManageUser/>
+                element:<PrivateRoute><Dashboard/></PrivateRoute>
             },
           
             //shared menu 
             {
                 path:'manageReview',
-                element:<ManageReview/>
+                element:<PrivateRoute><SharedRoute><ManageReview/></SharedRoute></PrivateRoute>
             },
             {
                 path:'addScholarShip',
-                element:<AddScholarship/>
+                element:<PrivateRoute><SharedRoute><AddScholarship/></SharedRoute></PrivateRoute>
             },
             {
                 path:'manageScholarShip',
-                element:<ManageScholarship/>
+                element:<PrivateRoute><SharedRoute><ManageScholarship/></SharedRoute></PrivateRoute>
             },
            
             // {
@@ -83,27 +86,27 @@ const router = createBrowserRouter([
             // moderator menu
             {
                 path:'appliedScholarship',
-                element:<AppliedScholarship/>
+                element:<PrivateRoute><SharedRoute><AppliedScholarship/></SharedRoute></PrivateRoute>
             },
             // user menu
             {
                 path:'myApplication',
-                element:<MyApplication/>
+                element:<PrivateRoute><MyApplication/></PrivateRoute>
             },
             {
                 path:'myReview',
-                element:<MyReview/>
+                element:<PrivateRoute><MyReview/></PrivateRoute>
             },
            
 
           //common menu
             {
                 path:'profile',
-                element:<Profile/>
+                element:<PrivateRoute><Profile/></PrivateRoute>
             },
             {
                 path:'updateProfile',
-                element:<UpdateProfile/>
+                element:<PrivateRoute><UpdateProfile/></PrivateRoute>
             },
         ]
     },

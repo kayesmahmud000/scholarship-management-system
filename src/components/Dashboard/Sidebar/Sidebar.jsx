@@ -8,10 +8,11 @@ import logo from '../../../assets/coin.png'
 import MenuItem from './Menu/MenuItem';
 import { FcSettings } from 'react-icons/fc';
 import { GrLogout } from 'react-icons/gr';
-import ModeratorMenu from './Menu/ModeratorMenu';
+import useRole from '../../../hooks/useRole';
 
 const Sidebar = () => {
     const [isActive, setIsActive] = useState(false)
+    const [role]=useRole()
     const handleToggle = () => {
         setIsActive(!isActive)
     }
@@ -64,10 +65,10 @@ const Sidebar = () => {
                {role==="admin"&&  <AdminMenu />} */}
 
 
-                            <AdminMenu />
-                            <SharedMenu />
-                            <ModeratorMenu></ModeratorMenu>
-                            <UserMenu></UserMenu>
+                           {role==='admin' &&  <AdminMenu />}
+                           {role !=='user' && <SharedMenu />}
+                            {/* <ModeratorMenu></ModeratorMenu> */}
+                           {role ==='user' &&  <UserMenu></UserMenu>}
 
 
                         </nav>
