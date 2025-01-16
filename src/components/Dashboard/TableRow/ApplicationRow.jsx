@@ -48,7 +48,7 @@ const ApplicationRow = ({ application, refetch }) => {
                     {scholarInfo?.universityCountry}
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
-                    {scholarInfo?.feedback}
+                    {scholarInfo?.feedback ? scholarInfo.feedback:"No feedback"}
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
                     {scholarInfo?.subjectCategory}

@@ -3,7 +3,7 @@ import {
     Transition,
     TransitionChild,
     DialogPanel,
-    DialogTitle,
+    
 } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
