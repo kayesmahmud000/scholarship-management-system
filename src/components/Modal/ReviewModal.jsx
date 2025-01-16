@@ -75,7 +75,7 @@ const ReviewModal = ({ application, isOpen, setIsReviewModalOpen }) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <DialogPanel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-[#2C2536] p-6 text-left align-middle shadow-xl transition-all">
+                            <DialogPanel className="w-full max-w-lg  transform overflow-hidden rounded-2xl bg-[#2C2536] p-6 text-left align-middle shadow-xl transition-all">
                                 {/* Close Button */}
                                {/* Close Button */}
                                <button
