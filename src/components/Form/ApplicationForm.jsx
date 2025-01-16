@@ -107,7 +107,7 @@ const ApplicationForm = ({ setIsEditModalOpen, loading, handleApplication,   sch
                                     <option disabled >Study Gap</option>
                                     <option value="N/A">N/A</option>
                                     <option value="1 Year">1 year</option>
-                                    <option value="2 Years">1 Years</option>
+                                    <option value="2 Years">2 Years</option>
                                    
                                 </select>
 
@@ -139,12 +139,12 @@ const ApplicationForm = ({ setIsEditModalOpen, loading, handleApplication,   sch
                         </div>
 
                         {/* Service Charge */}
-                        <di className='lg:w-1/2'>
+                        <div className='lg:w-1/2'>
                             <label className="block mb-2">Subject Category</label>
                             <input defaultValue={scholar?.subjectCategory} disabled type="text" name='subjectCategory'
                                 className="w-full p-2 rounded bg-gray-200 text-gray-800 mb-4" />
 
-                        </di>
+                        </div>
                       </div>
 
                     </div>

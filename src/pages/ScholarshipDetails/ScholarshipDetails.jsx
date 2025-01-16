@@ -5,10 +5,14 @@ import { useQuery } from '@tanstack/react-query';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Heading from '../../components/shared/Heading';
 import { FaArrowRight } from 'react-icons/fa';
+import useRole from '../../hooks/useRole';
+import useAuth from '../../hooks/useAuth';
 
 const ScholarshipDetails = () => {
     const { id } = useParams()
     const axiosSecure = useAxiosSecure()
+    const [role]= useRole()
+    const {user}= useAuth()
     const { data: scholar, isLoading, refetch } = useQuery({
         queryKey: ['scholar', id],
         queryFn: async () => {
@@ -100,7 +104,7 @@ const ScholarshipDetails = () => {
                 {/* Apply Button */}
                 <div className="mt-8 flex justify-end">
                  <Link to={`/payment/${_id}`}>
-                 <button className="px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+                 <button disabled={ !user || !user.email || role!=='user'} className="px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
                         Apply Now <FaArrowRight/>
                     </button></Link>

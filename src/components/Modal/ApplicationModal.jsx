@@ -5,16 +5,69 @@ import {
     DialogPanel,
     DialogTitle,
   } from '@headlessui/react'
-  import { Fragment, } from 'react'
+  import { Fragment, useState, } from 'react'
 import { RxCross2 } from 'react-icons/rx';
 import ApplicationForm from '../Form/ApplicationForm';
+import useAuth from '../../hooks/useAuth';
+import { imageUpload } from '../../api/utils';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
     const [loading, setLoading] = useState(false)
+    const axiosSecure= useAxiosSecure()
+    const {user}=useAuth()
+    const navigate= useNavigate()
     
     const handleApplication=async(e)=>{
+      setLoading(true)
         e.preventDefault()
+        const form= e.target
+       const photoFile= form.photo.files[0]
+     
+               const imageUrl = await imageUpload(photoFile)
+       console.log(imageUrl)
 
+    const scholarInfo={
+      scholarId:scholar._id,
+      degree: form.degree.value,
+      universityName: form.universityName.value,
+      scholarshipCategory: form.scholarshipCategory.value,
+      subjectCategory: form.subjectCategory.value,
+      applicationDate:new Date().toISOString().split('T')[0]
+     }
+        const applicationData = {
+          phoneNumber: form.phoneNumber.value,
+          applicantEmail:user?.email,
+          applicantName:user?.displayName,
+          photo:imageUrl,
+          // userId:'',
+          village: form.village.value,
+          district: form.district.value,
+          country:form.country.value,
+          gender: form.gender.value,
+          hscResult: form.hscResult.value,
+          studyGap: form.studyGap.value ,
+          sscResult: form.sscResult.value,
+          scholarInfo,
+          status:"pending"
+        
+        
+      };
+      console.log(applicationData)
+      try{
+        // post the application on db application collection
+        await axiosSecure.post('/application', applicationData)
+        toast.success('Application Successful!')
+        navigate('/dashboard/myApplication')
+      }catch (err){
+        console.log(err)
+      }finally{
+        setLoading(false)
+      }
+       
+      
 
     }
     return (
