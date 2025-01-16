@@ -9,17 +9,11 @@ const MyApplication = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
     
-    const { data: applications, isLoading } = useQuery({
+  const { data: applications={}, isLoading, refetch } = useQuery({
         queryKey: ['application', user?.email],
-        enabled: !!user?.email, // Prevent querying if user is not available
         queryFn: async () => {
-            try {
-                const { data } = await axiosSecure.get(`/application/${user?.email}`);
-                return data;
-            } catch (error) {
-                console.error('Error fetching application:', error);
-                
-            }
+          const { data } = await axiosSecure.get(`/application/${user?.email}`);
+          return data;
         }
     });
     
@@ -105,7 +99,7 @@ const MyApplication = () => {
                 </thead>
                 <tbody>
                     {
-                        applications.map(application=><ApplicationRow key={application._id} application={application}/>)
+                        applications.map(application=> <ApplicationRow  refetch={ refetch} key={application._id} application={application}/>)
                     }
                  {/* {
                allScholarship.map(scholarship=> <ScholarshipRow refetch={refetch} scholarship={scholarship} key={scholarship._id} />)
