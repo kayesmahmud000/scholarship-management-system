@@ -6,33 +6,34 @@ import { Link } from "react-router-dom";
 import ApplicationUpdateModal from "../../Modal/ApplicationUpdateModal";
 import { useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import ReviewModal from "../../Modal/ReviewModal";
 
 const ApplicationRow = ({ application, refetch }) => {
-    const { scholarInfo,  status } = application || {};
-    const axiosSecure=useAxiosSecure()
+    const { scholarInfo, status } = application || {};
+    const axiosSecure = useAxiosSecure()
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-    const [isReviewModalOpen, setIsReviewModalOpen ]=useState(false)
-    const [applcation, setApplcation]=useState({})
+    const [isReviewModalOpen, setIsReviewModalOpen] = useState(false)
+    const [applcation, setApplcation] = useState({})
 
-    const handleDelete=async(id)=>{
+    const handleDelete = async (id) => {
 
-        try{
+        try {
             await axiosSecure.delete(`/application/${id}`)
             refetch()
 
-        }catch (err){
+        } catch (err) {
             console.log(err)
         }
     }
-    const handleUpdateBtn=async(id) => {
-      if(status !== 'pending'){
-        return toast.error("application is processing can't edit right now ")
-    }
+    const handleUpdateBtn = async (id) => {
+        if (status !== 'pending') {
+            return toast.error("application is processing can't edit right now ")
+        }
         setIsEditModalOpen(true)
-        try{
-            const {data}= await axiosSecure.get(`/applications/${id}`)
-           setApplcation(data)
-        }catch (err){
+        try {
+            const { data } = await axiosSecure.get(`/applications/${id}`)
+            setApplcation(data)
+        } catch (err) {
             console.log(err)
         }
     };
@@ -71,16 +72,16 @@ const ApplicationRow = ({ application, refetch }) => {
                         </button>
                     </Link>
 
-                    <button onClick={()=>handleUpdateBtn(application?._id)} className="cursor-pointer font-semibold">
+                    <button onClick={() => handleUpdateBtn(application?._id)} className="cursor-pointer font-semibold">
                         <FaEdit size={30} />
                     </button>
 
-                    <button onClick={()=>handleDelete(application?._id)} className="cursor-pointer font-semibold">
+                    <button onClick={() => handleDelete(application?._id)} className="cursor-pointer font-semibold">
                         <MdDeleteForever size={34} />
                     </button>
                 </td>
                 <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm">
-                    <button onClick={()=>isReviewModalOpen(true)} className="cursor-pointer font-semibold">
+                    <button onClick={() => setIsReviewModalOpen(true)} className="cursor-pointer font-semibold">
                         <FcRating size={30} />
                     </button>
                 </td>
@@ -92,6 +93,10 @@ const ApplicationRow = ({ application, refetch }) => {
                 applcation={applcation}
                 setIsEditModalOpen={setIsEditModalOpen}
                 refetch={refetch}
+            />
+            <ReviewModal isOpen={isReviewModalOpen}
+               application={application}
+                setIsReviewModalOpen={setIsReviewModalOpen}
             />
         </>
     );

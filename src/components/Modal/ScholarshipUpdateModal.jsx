@@ -57,8 +57,8 @@ const  ScholarshipUpdateModal = ({ setIsEditModalOpen,  isOpen , scholar, refetc
                 
                 <div className='mt-2 relative w-full'>
                 <div className='absolute top-5 left-5'>
-                  <span   onClick={() => setIsEditModalOpen(false)}
-                  ><RxCross2 size={30} /></span>
+                  <button   onClick={() => setIsEditModalOpen(false)}
+                  ><RxCross2 size={30} /></button>
                 </div>
                 <UpdateScholershipFrom scholar={scholar} setIsEditModalOpen={setIsEditModalOpen} refetch={refetch}/>
                 </div>

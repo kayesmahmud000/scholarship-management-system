@@ -31,6 +31,7 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
 
     const scholarInfo={
       scholarId:scholar._id,
+      scholarName:scholar.scholarshipName,
       degree: form.degree.value,
       universityName: form.universityName.value,
       scholarshipCategory: form.scholarshipCategory.value,
@@ -111,8 +112,8 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
                   
                   <div className='mt-2 relative w-full'>
                   <div className='absolute top-5 left-5'>
-                    <span   onClick={() => setIsEditModalOpen(false)}
-                    ><RxCross2 size={30} /></span>
+                    <button  onClick={() => setIsEditModalOpen(false)}
+                    ><RxCross2 size={30} /></button>
                   </div>
                   <ApplicationForm loading={loading}   scholar={scholar} handleApplication={handleApplication} setIsEditModalOpen={setIsEditModalOpen}/>
                   {/* <UpdateScholershipFrom scholar={scholar} setIsEditModalOpen={setIsEditModalOpen} refetch={refetch}/> */}

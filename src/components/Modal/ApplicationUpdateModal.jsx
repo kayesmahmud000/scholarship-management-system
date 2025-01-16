@@ -78,9 +78,9 @@ const ApplicationUpdateModal = ({ refetch,applcation, isOpen, setIsEditModalOpen
 
                                 <div className="mt-2 relative w-full">
                                     <div className="absolute top-5 left-5">
-                                        <span onClick={() => setIsEditModalOpen(false)}>
+                                        <button onClick={() => setIsEditModalOpen(false)}>
                                             <RxCross2 size={30} />
-                                        </span>
+                                        </button>
                                     </div>
                                     <ApplicationUpdateFrom   handleUpdateInfo={ handleUpdateInfo} loading={loading} applcation={applcation}></ApplicationUpdateFrom>
                                     {/* Sample content */}
