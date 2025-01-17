@@ -77,7 +77,7 @@ console.log(scholarship)
             <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
                 <p className='text-white whitespace-no-wrap'>$ {applicationFees}</p>
             </td>
-            <td className='px-5 py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm'>
+            <td className='px-5  py-8 lg:py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm'>
                 <Link to={`/scholarshipDetails/${_id}`}>
                     <button className='cursor-pointer font-semibold'>
                         <FaRegEye size={30} />

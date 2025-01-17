@@ -55,7 +55,7 @@ const UserDataRow = ({ refetch, user, }) => {
                 </select>
             </td>
 
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
+            <td className='px-5 py-8 lg:py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
                 <button
                     onClick={() => handleDelete(user?._id)}
                     className=' cursor-pointer font-semibold '

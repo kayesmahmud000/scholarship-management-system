@@ -144,7 +144,7 @@ const ScholarshipDetails = () => {
                         className="mySwiper lg:h-[300px] lg:w-[1400px] mx-auto"
                     >
                         {reviews.map((review, index) => (
-                            <SwiperSlide key={index} className=" p-6 rounded-lg text-white">
+                            <SwiperSlide key={index} className=" lg:p-6 rounded-lg text-white">
                                 <ReviewCard review={review} />
 
                             </SwiperSlide>

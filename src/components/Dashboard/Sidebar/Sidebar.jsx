@@ -12,6 +12,7 @@ import useRole from '../../../hooks/useRole';
 import useAuth from '../../../hooks/useAuth';
 import LoadingSpinner from '../../LoadingSpinner';
 import { CgProfile } from 'react-icons/cg';
+import { FaHome } from 'react-icons/fa';
 
 const Sidebar = () => {
     const [isActive, setIsActive] = useState(false)
@@ -88,6 +89,15 @@ const Sidebar = () => {
                 <div>
                     <hr />
                   
+                    <button
+
+                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-gray-300    transition-colors duration-300  hover:text-gray-700 transform'
+                    >
+                        <FaHome className='w-5 h-5' />
+                     <Link to={'/'}>  
+                      <button  className='mx-4 font-medium'>Home</button>
+                     </Link>
+                    </button>
                     <button
 
                         className='flex w-full items-center px-4 py-2 mt-5  hover:bg-gray-300    transition-colors duration-300  hover:text-gray-700 transform'

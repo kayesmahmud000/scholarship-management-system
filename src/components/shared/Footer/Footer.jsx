@@ -6,7 +6,7 @@ const Footer = () => {
            <footer className="footer footer-center bg-[#1e172b]   p-10">
                 <aside>
                <div className='flex items-center'>
-               <img src={logo} className=" w-10 md:w-20" alt="" />
+               <img src={logo} className="-mt-5 w-10 md:w-20" alt="" />
                <h1 className="font-bold md:text-5xl">SCHOLAR <span className='md:text-xl font-bold'>TRACK PRO</span></h1>
                </div>
                 <p>Empowering Dreams, One Scholarship at a Time.</p>

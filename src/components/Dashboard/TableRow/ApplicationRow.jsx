@@ -80,7 +80,7 @@ const ApplicationRow = ({ application, refetch }) => {
                         <MdDeleteForever size={34} />
                     </button>
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="px-5 py-7 lg:py-5 border-b border-gray-200 bg-[#1A1423] text-sm">
                     <button onClick={() => setIsReviewModalOpen(true)} className="cursor-pointer font-semibold">
                         <FcRating size={30} />
                     </button>

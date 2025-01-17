@@ -39,13 +39,13 @@ const ReviewRow = ({review, refetch}) => {
                 <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
                     {universityName}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-xs text-white">
                     {comment}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5  border-b border-gray-200 bg-[#1A1423] text-sm text-white">
                     {reviewDate}
                 </td>
-                <td className="py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className=" py-8 lg:py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
 
                     <button onClick={() => setIsEditModalOpen(true)} className="cursor-pointer font-semibold">
                         <FaEdit size={30} />

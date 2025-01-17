@@ -65,13 +65,13 @@ const AppliedScholarRow = ({ application,  refetch }) => {
                     </button>
                 </td>
 
-                <td className="py-5 px-5 mx-auto border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="lg:py-5 py-8 px-5 mx-auto border-b border-gray-200 bg-[#1A1423] text-sm text-white">
                 <button onClick={()=>setFeedbackModal(true)} className="cursor-pointer font-semibold">
                 <MdFeedback  size={24} />
                     </button>
                 
                 </td>
-                <td className="py-9  px-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="py-10  px-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
                    
                     <button onClick={handleCancel} className="cursor-pointer font-semibold">
                     <ImCancelCircle  size={24} />
