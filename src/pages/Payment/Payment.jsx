@@ -4,6 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_PUBLIC_KEY);
@@ -17,7 +18,7 @@ const Payment = () => {
         queryKey:['scholar', id ],
         queryFn:async()=>{
             const {data}= await axiosSecure.get(`/scholar/${id}`)
-            return data
+            return data[0]
 
         }
     })
@@ -28,6 +29,7 @@ const Payment = () => {
     //         applicantName:user?.displayName
         
     //       }
+    if(isLoading) return <LoadingSpinner/>
     return (
         <div className="flex justify-center text-center items-center min-h-screen ">
        <div className="flex flex-col max-w-md shadow-2xl sm:p-10 bg-[#2C2536] p-8 rounded-lg  border border-gray-600">

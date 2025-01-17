@@ -11,7 +11,6 @@ import ManageReview from "../pages/SharedPage/ManageReview";
 import AddScholarship from "../pages/SharedPage/AddScholarship";
 import ManageScholarship from "../pages/SharedPage/ManageScholeaship";
 import ManageApplication from "../pages/SharedPage/ManageApplication";
-import AppliedScholarship from "../pages/Dashboard/Moderator/AppliedScholarship";
 import MyApplication from "../pages/Dashboard/User/MyApplication";
 import MyReview from "../pages/Dashboard/User/MyReview";
 import PrivateRoute from "./PrivateRoute";
@@ -22,6 +21,7 @@ import AdminRoute from "./AdminRoute";
 import SharedRoute from "./SharedRoute";
 import Dashboard from "../pages/Dashboard/Common/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AppliedScholarship from "../pages/SharedPage/AppliedScholarship";
 
 const router = createBrowserRouter([
     {
@@ -60,12 +60,16 @@ const router = createBrowserRouter([
         path:'/dashboard',
         element:<PrivateRoute>:<DashboardLayout/></PrivateRoute>,
         children:[
-            //admin menu
+            //dashboard menu
             {
                 index: true,
                 element:<PrivateRoute><Dashboard/></PrivateRoute>
             },
-          
+            //admin menu
+            {
+              path:'mangeUser',
+              element:<PrivateRoute><AdminRoute><ManageUser/> </AdminRoute></PrivateRoute> 
+            },
             //shared menu 
             {
                 path:'manageReview',
@@ -78,6 +82,10 @@ const router = createBrowserRouter([
             {
                 path:'manageScholarShip',
                 element:<PrivateRoute><SharedRoute><ManageScholarship/></SharedRoute></PrivateRoute>
+            },
+            {
+                path:'manageApplication',
+                element:<PrivateRoute><SharedRoute><ManageApplication/></SharedRoute></PrivateRoute>
             },
            
             // {

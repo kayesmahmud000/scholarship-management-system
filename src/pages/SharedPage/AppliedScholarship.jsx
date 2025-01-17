@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const AppliedScholarship = () => {
     return (
         <div>
-            Applied Scholarship
+           All application hare  
         </div>
     );
 };

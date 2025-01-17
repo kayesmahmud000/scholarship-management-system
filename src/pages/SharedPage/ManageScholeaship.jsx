@@ -2,6 +2,7 @@ import React from 'react';
 import ScholarshipRow from '../../components/Dashboard/TableRow/ScholarshipRow';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const ManageScholarship = () => {
     const axiosSecure= useAxiosSecure()
@@ -12,6 +13,7 @@ const ManageScholarship = () => {
             return data
         }
     })
+    if(isLoading) return <LoadingSpinner/>
     return (
         <div className='container mx-auto px-4 sm:px-8'>
         {/* <Helmet>

@@ -109,11 +109,21 @@ const ScholarshipDetails = () => {
 
                     {/* Apply Button */}
                     <div className="mt-8 flex justify-end">
-                        <Link to={`/payment/${_id}`}>
-                            <button disabled={!user || !user.email || role !== 'user'} className="px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
-          hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
+                        {user && user.email && role === 'user' ? (
+                            <Link to={`/payment/${_id}`}>
+                                <button className="px-6 btn text-lg bg-purple-500 md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+            hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
+                                    Apply Now <FaArrowRight />
+                                </button>
+                            </Link>
+                        ) : (
+                            <button disabled className="px-6 btn text-lg bg-gray-400 md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+        cursor-not-allowed">
                                 Apply Now <FaArrowRight />
-                            </button></Link>
+                            </button>
+                        )}
+
+
                     </div>
 
 
@@ -123,20 +133,20 @@ const ScholarshipDetails = () => {
                 <h2 className="text-3xl font-bold text-purple-400 mb-6">User Reviews</h2>
                 {reviews && reviews.length > 0 ? (
                     <Swiper
-                    effect={'coverflow'}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={3}
-                   
-                    autoplay={{ delay: 1500, reverseDirection:true}}
-                   
-                    modules={[EffectCoverflow, Autoplay, Pagination]}
-                    className="mySwiper lg:h-[300px] lg:w-[1400px] mx-auto"
+                        effect={'coverflow'}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={3}
+
+                        autoplay={{ delay: 1500, reverseDirection: true }}
+
+                        modules={[EffectCoverflow, Autoplay, Pagination]}
+                        className="mySwiper lg:h-[300px] lg:w-[1400px] mx-auto"
                     >
                         {reviews.map((review, index) => (
                             <SwiperSlide key={index} className=" p-6 rounded-lg text-white">
-                                <ReviewCard review={review}/>
-                               
+                                <ReviewCard review={review} />
+
                             </SwiperSlide>
                         ))}
                     </Swiper>

@@ -40,6 +40,9 @@ const ReviewModal = ({ application, isOpen, setIsReviewModalOpen }) => {
         console.log(reviewData)
         try{
             await axiosSecure.post('/review', reviewData)
+
+            // await axiosSecure.patch(`/scholar/${application?.scholarInfo?.scholarId}`, {rating})
+
             toast.success('review send successful!')
             navigate('/dashboard/myReview')
 

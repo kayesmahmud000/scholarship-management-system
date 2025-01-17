@@ -1,4 +1,4 @@
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ScholarCard = ({ scholarship }) => {
@@ -17,7 +17,7 @@ const ScholarCard = ({ scholarship }) => {
         {/* Scholarship Title */}
         <p className="text-lg font-medium text-center mt-2 text-purple-400">{scholarship?.universityName}</p>
         <p className="text-center mt-1 text-sm text-gray-300">
-          {scholarship?.universityCity}, {scholarship?.universityCountry} 🌍
+          {scholarship?.universityCity}, {scholarship?.universityCountry} 
         </p>
         <p className="text-center text-sm font-semibold text-purple-200">World Rank: #{scholarship?.universityWorldRank}</p>
       </div>
@@ -25,13 +25,16 @@ const ScholarCard = ({ scholarship }) => {
       {/* Degree and Category */}
       <div className="flex justify-around mt-4 text-sm">
         <span className="bg-purple-600 px-3 py-1 rounded-full font-semibold">{scholarship?.subjectCategory}</span>
-        <span className="bg-purple-600 px-3 py-1 rounded-full font-semibold">{scholarship?.degree}</span>
+        <span className="bg-purple-600 px-3 py-1 rounded-full font-semibold">{scholarship?.scholarshipCategory}</span>
       </div>
       {/* Deadline and Post Date */}
       <div className="mt-6 text-center text-lg font-semibold w-full">
-        <p className="text-yellow-300">🎯 Deadline: {scholarship?.applicationDeadline}</p>
-        <p className="text-sm mt-1 text-gray-400">📅 Posted on: {scholarship?.scholarshipPostDate}</p>
+      <p className="text-gray-300"> Application Fee: $ {scholarship?.applicationFees}</p>
+        <p className="text-sm my-2 text-gray-300"> Deadline: {scholarship?.applicationDeadline}</p>
+        
+        <p className="text-md my-2 text-yellow-300 ">   Rating: {scholarship?.averageRating}</p>
       </div>
+      
       {/* Button Section (Anchored at Bottom) */}
       <Link to={`/scholarshipDetails/${scholarship._id}`}>
       <div className="mt-auto w-full flex justify-center">

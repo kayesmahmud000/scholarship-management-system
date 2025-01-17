@@ -16,7 +16,7 @@ const Dashboard = () => {
   return <Navigate to={'/dashboard/myApplication'}></Navigate>
   }
   if(role === 'moderator'){
-  return <Navigate to={'/dashboard/appliedScholarship'}></Navigate>
+  return <Navigate to={'/dashboard/manageScholarShip'}></Navigate>
   }
   
   return (
