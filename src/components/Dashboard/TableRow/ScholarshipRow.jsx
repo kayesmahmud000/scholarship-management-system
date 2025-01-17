@@ -12,7 +12,7 @@ const ScholarshipRow = ({ scholarship, refetch }) => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [scholar, setScholar] = useState({})
     const axiosSecure = useAxiosSecure()
-
+console.log(scholarship)
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
