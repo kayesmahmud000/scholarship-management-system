@@ -22,6 +22,7 @@ import SharedRoute from "./SharedRoute";
 import Dashboard from "../pages/Dashboard/Common/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AppliedScholarship from "../pages/SharedPage/AppliedScholarship";
+import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
 
 const router = createBrowserRouter([
     {
@@ -69,9 +70,13 @@ const router = createBrowserRouter([
             },
             //admin menu
             {
-              path:'mangeUser',
-              element:<PrivateRoute><AdminRoute><ManageUser/> </AdminRoute></PrivateRoute> 
+              path:'analytics',
+              element:<PrivateRoute><AdminRoute><Analytics/> </AdminRoute></PrivateRoute> 
             },
+            {
+                path:'mangeUser',
+                element:<PrivateRoute><AdminRoute><ManageUser/> </AdminRoute></PrivateRoute> 
+              },
             //shared menu 
             {
                 path:'manageReview',

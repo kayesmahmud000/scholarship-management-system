@@ -2,6 +2,7 @@ import { Navigate } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
 import LoadingSpinner from "../../../components/LoadingSpinner";
 import ManageUser from "../Admin/ManageUser/ManageUser";
+import Analytics from "../Admin/Analytics/Analytics";
 
 
 const Dashboard = () => {
@@ -24,7 +25,7 @@ const Dashboard = () => {
       {/* <Helmet>
         <title>Dashboard</title>
       </Helmet> */}
-    {role === 'admin' && <ManageUser/> }
+    {role === 'admin' && <Analytics/>}
     </div>
   )
 };

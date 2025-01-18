@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
-// import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import useRole from "../hooks/useRole";
 
 

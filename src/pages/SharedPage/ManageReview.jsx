@@ -33,7 +33,7 @@ const ManageReview = () => {
     return (
         <div className="max-w-6xl mx-auto">
             <Heading title={'Manage Reviews'} subtitle={''}/>
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 my-16 lg:grid-cols-3">
+            <div className="grid grid-cols-1 my-10 gap-5 md:grid-cols-2  lg:grid-cols-3">
                 {
                     reviews && reviews.length > 0 ? reviews.map(review => <div key={review?._id} className="flex bg-[#2C2536]  flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md ">
                         <div className="flex justify-between items-center">

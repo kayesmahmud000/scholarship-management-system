@@ -91,7 +91,7 @@ const Sidebar = () => {
 
                     <button
 
-                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-gray-300    transition-colors duration-300  hover:text-gray-700 transform'
+                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500 text-white    transition-colors duration-300   transform'
                     >
                         <FaHome className='w-5 h-5' />
                         <Link to={'/'}>
@@ -100,7 +100,7 @@ const Sidebar = () => {
                     </button>
                     <button
 
-                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-gray-300    transition-colors duration-300  hover:text-gray-700 transform'
+                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500    transition-colors duration-300  text-white transform'
                     >
                         <GrLogout className='w-5 h-5' />
 

@@ -37,7 +37,7 @@ const ManageUser = () => {
   console.log(allUsers)
   if (isLoading) return <LoadingSpinner></LoadingSpinner>
   return (
-    <div className='container mx-auto px-4 sm:px-8'>
+    <div className='max-w-7xl mx-auto px-4 sm:px-8'>
       {/* <Helmet>
           <title>Manage Users</title>
         </Helmet> */}
