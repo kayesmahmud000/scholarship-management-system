@@ -33,7 +33,7 @@ const SharedMenu = () => {
                 address='/dashboard/appliedScholarship'
               />  </>
             }
-              {/* <MenuItem icon={LuLetterText} label='Manage Applied Application' address='/dashboard/manageApplication'/> */}
+           
         </div>
     );
 };

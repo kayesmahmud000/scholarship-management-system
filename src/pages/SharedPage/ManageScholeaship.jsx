@@ -9,7 +9,7 @@ const ManageScholarship = () => {
     const {data: allScholarship=[], refetch, isLoading}= useQuery({
         queryKey:['allScholarships'],
         queryFn:async()=>{
-            const {data}= await axiosSecure.get('/scholars')
+            const {data}= await axiosSecure.get('/all-scholar')
             return data
         }
     })

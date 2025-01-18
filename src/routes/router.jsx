@@ -10,7 +10,7 @@ import ManageUser from "../pages/Dashboard/Admin/ManageUser/ManageUser";
 import ManageReview from "../pages/SharedPage/ManageReview";
 import AddScholarship from "../pages/SharedPage/AddScholarship";
 import ManageScholarship from "../pages/SharedPage/ManageScholeaship";
-import ManageApplication from "../pages/SharedPage/ManageApplication";
+// import ManageApplication from "../pages/SharedPage/ManageApplication";
 import MyApplication from "../pages/Dashboard/User/MyApplication";
 import MyReview from "../pages/Dashboard/User/MyReview";
 import PrivateRoute from "./PrivateRoute";
@@ -34,7 +34,9 @@ const router = createBrowserRouter([
         },
         {
             path:"allScholar",
-            element:<AllScholar/>
+            element:<AllScholar/>,
+            loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/scholar-count`)
+           
         },
         {
             path:"scholarshipDetails/:id",
@@ -83,16 +85,12 @@ const router = createBrowserRouter([
                 path:'manageScholarShip',
                 element:<PrivateRoute><SharedRoute><ManageScholarship/></SharedRoute></PrivateRoute>
             },
-            {
-                path:'manageApplication',
-                element:<PrivateRoute><SharedRoute><ManageApplication/></SharedRoute></PrivateRoute>
-            },
-           
             // {
             //     path:'manageApplication',
-            //     element:<ManageApplication/>
+            //     element:<PrivateRoute><SharedRoute><ManageApplication/></SharedRoute></PrivateRoute>
             // },
-            // moderator menu
+           
+          
             {
                 path:'appliedScholarship',
                 element:<PrivateRoute><SharedRoute><AppliedScholarship/></SharedRoute></PrivateRoute>

@@ -1,4 +1,5 @@
 import { FaArrowRight, FaStar } from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const ScholarCard = ({ scholarship }) => {
@@ -16,7 +17,8 @@ const ScholarCard = ({ scholarship }) => {
         />
         {/* Scholarship Title */}
         <p className="text-lg font-medium text-center mt-2 text-purple-400">{scholarship?.universityName}</p>
-        <p className="text-center mt-1 text-sm text-gray-300">
+        <p className="text-center mt-1 text-xs flex gap-1 items-center text-gray-300">
+        <IoLocationOutline />
           {scholarship?.universityCity}, {scholarship?.universityCountry} 
         </p>
         <p className="text-center text-sm font-semibold text-purple-200">World Rank: #{scholarship?.universityWorldRank}</p>

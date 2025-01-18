@@ -7,25 +7,40 @@ import ApplicationDetailsModal from "../../Modal/ApplicationDetailsModal";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 
-const AppliedScholarRow = ({ application,  refetch }) => {
+const AppliedScholarRow = ({ application, refetch }) => {
     const { scholarInfo, status,
-        applicantEmail, applicantName, photo, 
+        applicantEmail, applicantName, photo,
         country } = application || {};
-        const axiosSecure = useAxiosSecure()
-         const [feedbackModal, setFeedbackModal]= useState(false)
-         const [detailsModal, setDetailsModal]= useState(false)
-        
-        const handleCancel=async()=>{
-            try{
-                await axiosSecure.patch(`/application/status/${application._id}`, {status:'Rejected'})
-                toast.success('Application is Canceled')
-                refetch()
-            }catch(err){
-                console.log(err)
-            }
+    const axiosSecure = useAxiosSecure()
+    const [feedbackModal, setFeedbackModal] = useState(false)
+    const [detailsModal, setDetailsModal] = useState(false)
 
-            
+    const handleStatusChange = async (newStatus) => {
+
+        if (newStatus === status) return
+        console.log(newStatus)
+        try {
+            await axiosSecure.patch(`/application/new-status/${application._id}`, { status: newStatus })
+            toast.success('Application status updated')
+            refetch()
+        } catch (err) {
+            console.log(err)
         }
+
+    }
+    const handleCancel = async () => {
+        if(status==='rejected')return toast.error('Application already canceled')
+            if(status==='completed')return toast.error(' Application Process complete, cannot canceled now')
+        try {
+            await axiosSecure.patch(`/application/status/${application._id}`, { status: 'rejected' })
+            toast.success('Application is Canceled')
+            refetch()
+        } catch (err) {
+            console.log(err)
+        }
+
+
+    }
     return (
         <>
             <tr className="">
@@ -58,31 +73,42 @@ const AppliedScholarRow = ({ application,  refetch }) => {
                 </td>
 
                 <td className="py-5 px-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
-                    {status}
+                    {
+                        status=== 'rejected' ? <p className="text-red-400">Canceled</p>:              <select
+                        disabled={status==='completed'}
+                        defaultValue={status || 'user'}
+                        onChange={(e) => handleStatusChange(e.target.value)}
+                        className="p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                    >
+                        <option value="pending" >Pending</option>
+                        <option value=" processing"> Processing</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    }
                 </td>
                 <td className="py-5 px-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
-                <button onClick={()=>setDetailsModal(true)} className="cursor-pointer font-semibold">Details
+                    <button onClick={() => setDetailsModal(true)} className="cursor-pointer font-semibold">Details
                     </button>
                 </td>
 
                 <td className="lg:py-5 py-8 px-5 mx-auto border-b border-gray-200 bg-[#1A1423] text-sm text-white">
-                <button onClick={()=>setFeedbackModal(true)} className="cursor-pointer font-semibold">
-                <MdFeedback  size={24} />
+                    <button onClick={() => setFeedbackModal(true)} className="cursor-pointer font-semibold">
+                        <MdFeedback size={24} />
                     </button>
-                
+
                 </td>
                 <td className="py-10  px-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
-                   
-                    <button onClick={handleCancel} className="cursor-pointer font-semibold">
-                    <ImCancelCircle  size={24} />
+
+                    <button  onClick={handleCancel} className="cursor-pointer font-semibold">
+                        <ImCancelCircle size={24} />
                     </button>
                 </td>
 
             </tr>
-            <FeedbackModal isOpen={feedbackModal} refetch={refetch} setFeedbackModal={setFeedbackModal} application={application}/>
+            <FeedbackModal isOpen={feedbackModal} refetch={refetch} setFeedbackModal={setFeedbackModal} application={application} />
 
-            <ApplicationDetailsModal isOpen={detailsModal} setDetailsModal={setDetailsModal} application={application}/>
-          
+            <ApplicationDetailsModal isOpen={detailsModal} setDetailsModal={setDetailsModal} application={application} />
+
         </>
     );
 };
