@@ -4,6 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 import ReviewRow from '../../../components/Dashboard/TableRow/ReviewRow';
+import Heading from '../../../components/shared/Heading';
 
 const MyReview = () => {
     const {user, loading}=useAuth()
@@ -22,6 +23,7 @@ const MyReview = () => {
         {/* <Helmet>
             <title>Manage Users</title>
           </Helmet> */}
+          <Heading title={'My Reviews'} subtitle={''}/>
         <div className='py-8'>
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
             <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>

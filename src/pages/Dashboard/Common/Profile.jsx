@@ -11,7 +11,7 @@ const Profile = () => {
     return (
         <div className="h-screen flex items-center justify-center bg-[#1A1423] text-white p-6">
             <div className="bg-[#2C2536] p-8 rounded-lg shadow-lg w-full max-w-md text-center border border-gray-600">
-                <h1 className="text-4xl font-bold mb-6">My Profile</h1>
+                <h1 className="text-4xl font-bold mb-6">{role==='admin'? 'Admin Profile':'My Profile'}</h1>
 
                 {/* User Image */}
                 {user.photoURL ? (

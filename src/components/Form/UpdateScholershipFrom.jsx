@@ -5,13 +5,13 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 // import axios from 'axios';
 
-const UpdateScholershipFrom = ({ scholar, refetch, setIsEditModalOpen }) => {
+const UpdateScholershipFrom = ({ scholarship, refetch, setIsEditModalOpen }) => {
     // const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
     const [loading, setLoading] = useState(false)
    
 
-    const { scholarshipName, universityName, universityCountry, universityCity, universityWorldRank, subjectCategory, _id, scholarshipCategory, tuitionFees, applicationFees, applicationDeadline, serviceCharge, degree } = scholar || {};
+    const { scholarshipName, universityName, universityCountry, universityCity, universityWorldRank, subjectCategory, _id, scholarshipCategory, tuitionFees, applicationFees, applicationDeadline, serviceCharge, degree } = scholarship || {};
 
     const handleUpdate = async (e) => {
        

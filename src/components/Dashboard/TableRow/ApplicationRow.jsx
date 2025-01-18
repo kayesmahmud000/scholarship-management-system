@@ -65,7 +65,7 @@ const ApplicationRow = ({ application, refetch }) => {
                 <td className="py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
                     {status}
                 </td>
-                <td className="py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="py-10 lg:py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
                     <Link to={`/scholarshipDetails/${scholarInfo?.scholarId}`}>
                         <button className="cursor-pointer font-semibold">
                             <FaRegEye size={30} />

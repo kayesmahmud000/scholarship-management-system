@@ -3,6 +3,7 @@ import ScholarshipRow from '../../components/Dashboard/TableRow/ScholarshipRow';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import Heading from '../../components/shared/Heading';
 
 const ManageScholarship = () => {
     const axiosSecure= useAxiosSecure()
@@ -13,12 +14,14 @@ const ManageScholarship = () => {
             return data
         }
     })
+    console.log(allScholarship)
     if(isLoading) return <LoadingSpinner/>
     return (
         <div className='container mx-auto px-4 sm:px-8'>
         {/* <Helmet>
           <title>Manage Users</title>
         </Helmet> */}
+        <Heading title={'Manage Scholarships'}/>
         <div className='py-8'>
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
             <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>

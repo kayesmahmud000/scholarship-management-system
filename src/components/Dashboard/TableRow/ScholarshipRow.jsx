@@ -10,8 +10,9 @@ import Swal from "sweetalert2";
 
 const ScholarshipRow = ({ scholarship, refetch }) => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-    const [scholar, setScholar] = useState({})
+    // const [scholar, setScholar] = useState({})
     const axiosSecure = useAxiosSecure()
+    const { scholarshipName, universityName, subjectCategory, _id, applicationFees, degree } = scholarship || {};
 console.log(scholarship)
     const handleDelete = (id) => {
         Swal.fire({
@@ -43,22 +44,22 @@ console.log(scholarship)
         });
 
     }
-    const handleUpdateBtn = async (id) => {
+    const handleUpdateBtn = async () => {
         setIsEditModalOpen(true);
-        try {
-            const { data } = await axiosSecure.get(`/scholar/${id}`)
-            console.log(data)
-            setScholar(data)
-        } catch (err) {
-            console.log(err)
-        }
+        // try {
+        //     const { data } = await axiosSecure.get(`/scholar/${id}`)
+        //     console.log(data)
+        //     setScholar(data)
+        // } catch (err) {
+        //     console.log(err)
+        // }
     };
 
     const closeModal = () => {
         setIsEditModalOpen(false);
     };
 
-    const { scholarshipName, universityName, subjectCategory, _id, applicationFees, degree } = scholarship || {};
+    
 
     return (
         <tr>
@@ -85,7 +86,7 @@ console.log(scholarship)
                 </Link>
 
                 <button
-                    onClick={() => handleUpdateBtn(_id)}
+                    onClick={handleUpdateBtn}
                     className='cursor-pointer font-semibold'
                 >
                     <FaEdit size={30} />
@@ -93,7 +94,7 @@ console.log(scholarship)
 
                 <ScholarshipUpdateModal
                     isOpen={isEditModalOpen}
-                    scholar={scholar}
+                    scholarship={scholarship}
                     refetch={refetch}
                     setIsEditModalOpen={setIsEditModalOpen}
                     closeModal={closeModal}

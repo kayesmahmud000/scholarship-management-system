@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         {
             path:"allScholar",
             element:<AllScholar/>,
-            loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/scholar-count`)
+            // loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/scholar-count`)
            
         },
         {

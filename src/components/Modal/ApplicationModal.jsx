@@ -32,11 +32,11 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
     const scholarInfo={
       scholarId:scholar._id,
       scholarName:scholar.scholarshipName,
+      deadline:scholar.applicationDeadline,
       degree: form.degree.value,
       universityName: form.universityName.value,
       scholarshipCategory: form.scholarshipCategory.value,
       subjectCategory: form.subjectCategory.value,
-      applicationDate:new Date().toISOString().split('T')[0]
      }
         const applicationData = {
           phoneNumber: form.phoneNumber.value,
@@ -52,7 +52,8 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
           studyGap: form.studyGap.value ,
           sscResult: form.sscResult.value,
           scholarInfo,
-          status:"pending"
+          status:"pending",
+          applicationDate:new Date().toISOString().split('T')[0]
         
         
       };

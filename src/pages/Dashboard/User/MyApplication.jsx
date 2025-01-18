@@ -4,6 +4,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 import ApplicationRow from '../../../components/Dashboard/TableRow/ApplicationRow';
+import Heading from '../../../components/shared/Heading';
 
 const MyApplication = () => {
     const { user } = useAuth();
@@ -27,6 +28,7 @@ const MyApplication = () => {
         {/* <Helmet>
           <title>Manage Users</title>
         </Helmet> */}
+        <Heading title={'My Applications'} subtitle={''}/>
         <div className='py-8'>
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
             <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>

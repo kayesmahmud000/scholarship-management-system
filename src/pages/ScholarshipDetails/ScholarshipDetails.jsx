@@ -141,7 +141,7 @@ const ScholarshipDetails = () => {
                         autoplay={{ delay: 1500, reverseDirection: true }}
 
                         modules={[EffectCoverflow, Autoplay, Pagination]}
-                        className="mySwiper lg:h-[300px] lg:w-[1400px] mx-auto"
+                        className="mySwiper lg:h-[350px] lg:w-[1400px] mx-auto"
                     >
                         {reviews.map((review, index) => (
                             <SwiperSlide key={index} className=" lg:p-6 rounded-lg text-white">

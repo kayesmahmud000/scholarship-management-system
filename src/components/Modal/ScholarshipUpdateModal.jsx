@@ -12,8 +12,8 @@ import { Fragment, } from 'react'
 import UpdateScholershipFrom from '../Form/UpdateScholershipFrom'
 import { RxCross2 } from 'react-icons/rx'
 
-const  ScholarshipUpdateModal = ({ setIsEditModalOpen,  isOpen , scholar, refetch}) => {
-  
+const ScholarshipUpdateModal = ({ setIsEditModalOpen, isOpen, scholarship, refetch }) => {
+
 
 
   return (
@@ -52,15 +52,15 @@ const  ScholarshipUpdateModal = ({ setIsEditModalOpen,  isOpen , scholar, refetc
                   className='text-lg font-medium text-center leading-6 text-gray-900'
                 >
                   Update Scholar Information
-                  
+
                 </DialogTitle>
-                
+
                 <div className='mt-2 relative w-full'>
-                <div className='absolute top-5 left-5'>
-                  <button   onClick={() => setIsEditModalOpen(false)}
-                  ><RxCross2 size={30} /></button>
-                </div>
-                <UpdateScholershipFrom scholar={scholar} setIsEditModalOpen={setIsEditModalOpen} refetch={refetch}/>
+                  <div className='absolute top-5 left-5'>
+                    <button onClick={() => setIsEditModalOpen(false)}
+                    ><RxCross2 size={30} /></button>
+                  </div>
+                  <UpdateScholershipFrom scholarship={scholarship} setIsEditModalOpen={setIsEditModalOpen} refetch={refetch} />
                 </div>
               </DialogPanel>
             </TransitionChild>
@@ -73,4 +73,4 @@ const  ScholarshipUpdateModal = ({ setIsEditModalOpen,  isOpen , scholar, refetc
 
 
 
-export default  ScholarshipUpdateModal
+export default ScholarshipUpdateModal

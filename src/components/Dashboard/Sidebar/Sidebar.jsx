@@ -16,12 +16,12 @@ import { FaHome } from 'react-icons/fa';
 
 const Sidebar = () => {
     const [isActive, setIsActive] = useState(false)
-    const {loading, signout}=useAuth()
-    const [role, isLoading]=useRole()
+    const { loading, signout } = useAuth()
+    const [role, isLoading] = useRole()
     const handleToggle = () => {
         setIsActive(!isActive)
     }
-    if(loading && isLoading) return<LoadingSpinner/>
+    if (loading && isLoading) return <LoadingSpinner />
     return (
 
         <>
@@ -31,8 +31,8 @@ const Sidebar = () => {
                     <div className='block cursor-pointer p-4 font-bold'>
                         <Link to='/'>
                             <div className='flex  items-center'>
-                                <img src={logo} className=" w-10  " alt="" />
-                                <h1 className="font-bold md:text-3xl lg:text-5xl">SCHOLAR <span className='md:text-xl font-bold'>TRACK PRO</span></h1>
+                                <img src={logo} className=" w-10 -mt-2 hidden md:flex  lg:w-16" alt="" />
+                                <h1 className="font-bold text-xl md:text-3xl lg:text-5xl">SCHOLAR <span className=' text-sm md:text-xl font-bold border-b border-yellow-300'>TRACK PRO</span></h1>
                             </div>
                         </Link>
                     </div>
@@ -55,8 +55,8 @@ const Sidebar = () => {
                     <div>
                         <div className='w-full  hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center  mx-auto'>
                             <Link to='/'>
-                                <div className='flex  items-center'>                                <img src={logo} className=" w-20 " alt="" />
-                                    <h1 className="font-bold text-3xl">SCHOLAR <span className='md:text-xl font-bold'>TRACK PRO</span></h1>
+                                <div className='flex  items-center'>                                <img src={logo} className=" w-10 -mt-2 hidden md:flex  lg:w-16" alt="" />
+                                    <h1 className="font-bold text-xl md:text-3xl ">SCHOLAR <span className=' text-sm md:text-xl font-bold border-b border-yellow-300'>TRACK PRO</span></h1>
                                 </div>
                             </Link>
                         </div>
@@ -65,21 +65,21 @@ const Sidebar = () => {
                     {/* Nav Items */}
                     <div className='flex flex-col justify-between flex-1 mt-6'>
                         <nav>
-                        {
-                    role ==='admin'?  <MenuItem
-                    icon={CgProfile}
-                    label=' Admin Profile'
-                    address='/dashboard/profile'
-                /> : <MenuItem
-                    icon={CgProfile}
-                    label='Profile'
-                    address='/dashboard/profile'
-                />
-                   }
+                            {
+                                role === 'admin' ? <MenuItem
+                                    icon={CgProfile}
+                                    label=' Admin Profile'
+                                    address='/dashboard/profile'
+                                /> : <MenuItem
+                                    icon={CgProfile}
+                                    label='Profile'
+                                    address='/dashboard/profile'
+                                />
+                            }
 
-                           {role==='admin' &&  <AdminMenu />}
-                           {role !=='user' && <SharedMenu />}
-                           {role ==='user' &&  <UserMenu></UserMenu>}
+                            {role === 'admin' && <AdminMenu />}
+                            {role !== 'user' && <SharedMenu />}
+                            {role === 'user' && <UserMenu></UserMenu>}
 
 
                         </nav>
@@ -88,15 +88,15 @@ const Sidebar = () => {
 
                 <div>
                     <hr />
-                  
+
                     <button
 
                         className='flex w-full items-center px-4 py-2 mt-5  hover:bg-gray-300    transition-colors duration-300  hover:text-gray-700 transform'
                     >
                         <FaHome className='w-5 h-5' />
-                     <Link to={'/'}>  
-                      <button  className='mx-4 font-medium'>Home</button>
-                     </Link>
+                        <Link to={'/'}>
+                            <button className='mx-4 font-medium'>Home</button>
+                        </Link>
                     </button>
                     <button
 
