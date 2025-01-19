@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 import ApplicationRow from '../../../components/Dashboard/TableRow/ApplicationRow';
 import Heading from '../../../components/shared/Heading';
+import PageHelmet from '../../../components/PageHelmet';
 
 const MyApplication = () => {
     const { user } = useAuth();
@@ -25,11 +26,10 @@ const MyApplication = () => {
     
     return (
         <div className='container mx-auto px-4 sm:px-8'>
-        {/* <Helmet>
-          <title>Manage Users</title>
-        </Helmet> */}
+       <PageHelmet title={'My Application | Dashboard'}/>
         <Heading title={'My Applications'} subtitle={''}/>
-        <div className='py-8'>
+        <div className='py-8' data-aos="zoom-in"
+                            data-aos-duration="2000">
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
             <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
               <table className='min-w-full leading-normal'>

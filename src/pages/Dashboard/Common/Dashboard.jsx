@@ -3,6 +3,7 @@ import useRole from "../../../hooks/useRole";
 import LoadingSpinner from "../../../components/LoadingSpinner";
 import ManageUser from "../Admin/ManageUser/ManageUser";
 import Analytics from "../Admin/Analytics/Analytics";
+import PageHelmet from "../../../components/PageHelmet";
 
 
 const Dashboard = () => {
@@ -22,9 +23,7 @@ const Dashboard = () => {
   
   return (
     <div>
-      {/* <Helmet>
-        <title>Dashboard</title>
-      </Helmet> */}
+      <PageHelmet title={'Dashboard'}/>
     {role === 'admin' && <Analytics/>}
     </div>
   )

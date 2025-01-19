@@ -1,4 +1,5 @@
 import { DotLoader } from "react-spinners";
+import PageHelmet from "./PageHelmet";
 
 
 const LoadingSpinner = () => {
@@ -10,6 +11,7 @@ const LoadingSpinner = () => {
         justify-center 
         items-center `}
       >
+        <PageHelmet title={'Loading..'}/>
         <DotLoader size={80} color='white' />
         {/* <ScaleLoader size={100} color='lime' /> */}
       </div>

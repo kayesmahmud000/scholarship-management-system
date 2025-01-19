@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Heading from '../../components/shared/Heading';
+import PageHelmet from '../../components/PageHelmet';
 
 const ManageScholarship = () => {
     const axiosSecure= useAxiosSecure()
@@ -18,11 +19,10 @@ const ManageScholarship = () => {
     if(isLoading) return <LoadingSpinner/>
     return (
         <div className='container mx-auto px-4 sm:px-8'>
-        {/* <Helmet>
-          <title>Manage Users</title>
-        </Helmet> */}
+          <PageHelmet title={'Scholarships | Dashboard'}/>
         <Heading title={'Manage Scholarships'}/>
-        <div className='py-8'>
+        <div className='py-8' data-aos="zoom-in"
+                            data-aos-duration="2000">
           <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
             <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
               <table className='min-w-full leading-normal'>

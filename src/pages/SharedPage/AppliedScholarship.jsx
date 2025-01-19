@@ -4,6 +4,7 @@ import AppliedScholarRow from "../../components/Dashboard/TableRow/AppliedSchola
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { useEffect, useState } from "react";
 import Heading from "../../components/shared/Heading";
+import PageHelmet from "../../components/PageHelmet";
 
 const AppliedScholarship = () => {
   const axiosSecure = useAxiosSecure()
@@ -38,11 +39,9 @@ const AppliedScholarship = () => {
   console.log(applications)
   return (
     <div className='container mx-auto px-4 sm:px-8'>
-      {/* <Helmet>
-          <title>Manage Users</title>
-        </Helmet> */}
+      <PageHelmet title={'Applications | Dashboard'}/>
         <Heading title={'All Applications'} subtitle={''} />
-      <div className='px-5  flex justify-end bg-[#1A1423]  text-sm'>
+      <div className='px-5  flex justify-end bg-[#1A1423]  text-sm' >
         <select
 
           value={sortOption}
@@ -54,7 +53,8 @@ const AppliedScholarship = () => {
           <option value="appliedDeadline">Application Deadline</option>
         </select>
       </div>
-      <div className='py-8'>
+      <div className='py-8' data-aos="zoom-in"
+                            data-aos-duration="2000">
         <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
           <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
             <table className='min-w-full leading-normal'>

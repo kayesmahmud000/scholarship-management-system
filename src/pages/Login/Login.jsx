@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { ImSpinner } from "react-icons/im";
+import PageHelmet from "../../components/PageHelmet";
 
 const Login = () => {
     const { signIn } = useAuth()
@@ -36,6 +37,7 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center min-h-screen '>
+            <PageHelmet title={'Login | Scholar Track Pro'}/>
             <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Log In</h1>

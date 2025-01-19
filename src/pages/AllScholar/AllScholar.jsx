@@ -6,6 +6,7 @@ import ScholarCard from '../../components/AllScholars/ScholarCard';
 import Heading from '../../components/shared/Heading';
 import SearchInput from '../../components/SearchInput';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import PageHelmet from '../../components/PageHelmet';
 
 const AllScholar = () => {
     const [search, setSearch] = useState('');
@@ -48,6 +49,7 @@ const AllScholar = () => {
 
     return (
         <>
+        <PageHelmet title={'All Scholarships'}/>
             <div className="my-10">
                 <Heading
                     title="Your Dream Scholarship Awaits!"

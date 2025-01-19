@@ -37,7 +37,7 @@ const UserDataRow = ({ refetch, user, }) => {
     }
     return (
         <>
-         <tr>
+         <tr >
             <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]   text-sm'>
                 <p className='text-white whitespace-no-wrap'>{user?.name}</p>
             </td>

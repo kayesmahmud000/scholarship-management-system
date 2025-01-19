@@ -14,6 +14,9 @@ import {
 import AuthProvider from './provider/AuthProvider';
 import { Toaster } from 'react-hot-toast';
 import router from './routes/router';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const queryClient = new QueryClient()
 createRoot(document.getElementById('root')).render(

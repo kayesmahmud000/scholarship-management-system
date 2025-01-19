@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 import { PieChart, Pie,  Cell, Legend } from 'recharts';
+import PageHelmet from "../../../../components/PageHelmet";
 
 
 const Analytics = () => {
@@ -44,6 +45,7 @@ const Analytics = () => {
       
     return (
        <div className=" flex flex-col justify-center items-center">
+        <PageHelmet title={'Analytics | Dashboard'}/>
          <p className="text-4xl font-bold my-10 lg:my-10 text-transparent text-center bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
          Scholarship Category Distribution
                 </p>

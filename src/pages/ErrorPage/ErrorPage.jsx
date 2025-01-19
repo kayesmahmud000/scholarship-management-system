@@ -1,9 +1,10 @@
 import React from 'react';
+import PageHelmet from '../../components/PageHelmet';
 
 const ErrorPage = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-[#1A1423]">
-            {/* <TitleHelmet title={'Error Page'}></TitleHelmet> */}
+            <PageHelmet title={'Error Page'}/>
             <div className="text-center p-8  shadow-xl rounded-lg max-w-xl">
                 <h1 className="text-6xl font-bold text-purple-500">404</h1>
                 <p className="mt-4 text-lg text-gray-400">Sorry, we couldn't find the page you were looking for.</p>

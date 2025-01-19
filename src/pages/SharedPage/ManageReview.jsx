@@ -4,6 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 import toast from "react-hot-toast";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import Heading from "../../components/shared/Heading";
+import PageHelmet from "../../components/PageHelmet";
 
 
 
@@ -32,8 +33,10 @@ const ManageReview = () => {
     console.log(reviews)
     return (
         <div className="max-w-6xl mx-auto">
+            <PageHelmet title={'Reviews | Dashboard'}/>
             <Heading title={'Manage Reviews'} subtitle={''}/>
-            <div className="grid grid-cols-1 my-10 gap-5 md:grid-cols-2  lg:grid-cols-3">
+            <div className="grid grid-cols-1 my-10 gap-5 md:grid-cols-2  lg:grid-cols-3" data-aos="zoom-in"
+                            data-aos-duration="2000">
                 {
                     reviews && reviews.length > 0 ? reviews.map(review => <div key={review?._id} className="flex bg-[#2C2536]  flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md ">
                         <div className="flex justify-between items-center">

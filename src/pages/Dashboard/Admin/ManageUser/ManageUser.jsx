@@ -4,6 +4,7 @@ import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import UserDataRow from '../../../../components/Dashboard/TableRow/UserDataRow';
 import LoadingSpinner from '../../../../components/LoadingSpinner';
 import Heading from '../../../../components/shared/Heading';
+import PageHelmet from '../../../../components/PageHelmet';
 
 
 const ManageUser = () => {
@@ -37,10 +38,8 @@ const ManageUser = () => {
   console.log(allUsers)
   if (isLoading) return <LoadingSpinner></LoadingSpinner>
   return (
-    <div className='max-w-7xl mx-auto px-4 sm:px-8'>
-      {/* <Helmet>
-          <title>Manage Users</title>
-        </Helmet> */}
+    <div className='max-w-7xl mx-auto px-4 sm:px-8' >
+     <PageHelmet title={'Manage User | Dashboard'}/>
         <Heading title={'All Users'} subtitle={' '}/>
 
       <div className='px-5  flex justify-end bg-[#1A1423]  text-sm'>
@@ -57,7 +56,8 @@ const ManageUser = () => {
         </select>
       </div>
       {/* <Dropdown setSelectedRole={setSelectedRole}/> */}
-      <div className='py-8'>
+      <div className='py-8' data-aos="zoom-in"
+                            data-aos-duration="2000">
         <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
           <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>
             <table className='min-w-full leading-normal'>

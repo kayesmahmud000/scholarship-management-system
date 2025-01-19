@@ -13,6 +13,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import ReviewCard from '../../components/shared/ReviewCard';
+import PageHelmet from '../../components/PageHelmet';
 
 const ScholarshipDetails = () => {
     const { id } = useParams()
@@ -31,9 +32,11 @@ const ScholarshipDetails = () => {
     if (isLoading) return <LoadingSpinner />
     return (
         <div>
+            <PageHelmet title={'Scholarship Details'}/>
             <Heading title={'Unlock Your Academic Journey'} subtitle={'Explore comprehensive scholarship details including university rankings, funding options, and eligibility criteria to shape your future success.'} />
 
-            <div className="flex flex-col items-center justify-center bg-[#1A1423] text-white p-8 rounded-lg shadow-lg space-y-6 md:space-y-0 md:space-x-10">
+            <div className="flex flex-col items-center justify-center bg-[#1A1423] text-white p-8 rounded-lg shadow-lg space-y-6 md:space-y-0 md:space-x-10" data-aos="zoom-in"
+                            data-aos-duration="2000">
 
                 {/* Left Side - University Image */}
                 <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center items-center">

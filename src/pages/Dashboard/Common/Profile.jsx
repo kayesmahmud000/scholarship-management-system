@@ -3,13 +3,16 @@ import useAuth from '../../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 import useRole from '../../../hooks/useRole';
+import PageHelmet from '../../../components/PageHelmet';
 
 const Profile = () => {
     const {user, loading}=useAuth()
     const [role, isLoading]=useRole()
     if(loading && isLoading) return <LoadingSpinner/>
     return (
-        <div className="h-screen flex items-center justify-center bg-[#1A1423] text-white p-6">
+        <div className="h-screen flex items-center justify-center bg-[#1A1423] text-white p-6" data-aos="zoom-in"
+        data-aos-duration="2000">
+            <PageHelmet title={'Profile'}/>
             <div className="bg-[#2C2536] p-8 rounded-lg shadow-lg w-full max-w-md text-center border border-gray-600">
                 <h1 className="text-4xl font-bold mb-6">{role==='admin'? 'Admin Profile':'My Profile'}</h1>
 
