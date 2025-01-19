@@ -14,7 +14,7 @@ const Analytics = () => {
             return data.chartData
         }
     })
-    console.log(chartDatas)
+    // console.log(chartDatas)
 
     const piChartData= chartDatas.map(data=>{
         return {name: data.category, value:data.application}

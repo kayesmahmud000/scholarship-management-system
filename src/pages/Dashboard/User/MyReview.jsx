@@ -17,7 +17,7 @@ const MyReview = () => {
             return data
         }
     })
-    console.log(reviews)
+    // console.log(reviews)
     if(loading && isLoading) return <LoadingSpinner/>
     return (
         <div className='container mx-auto px-4 sm:px-8'>

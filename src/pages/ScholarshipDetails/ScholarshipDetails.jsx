@@ -27,7 +27,7 @@ const ScholarshipDetails = () => {
             return data[0]
         }
     })
-    console.log(scholar)
+    // console.log(scholar)
     const { scholarshipName, universityName, reviews, universityCountry, universityCity, universityWorldRank, subjectCategory, _id, scholarshipCategory, tuitionFees, applicationFees, applicationDeadline, serviceCharge, degree, universityLogo, scholarshipPostDate } = scholar || {};
     if (isLoading) return <LoadingSpinner />
     return (

@@ -36,7 +36,7 @@ const AppliedScholarship = () => {
   }, [sortOption, applications]);
 
   if (isLoading) return <LoadingSpinner />
-  console.log(applications)
+  // console.log(applications)
   return (
     <div className='container mx-auto px-4 sm:px-8'>
       <PageHelmet title={'Applications | Dashboard'}/>

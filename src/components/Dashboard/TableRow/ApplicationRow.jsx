@@ -22,7 +22,7 @@ const ApplicationRow = ({ application, refetch }) => {
             refetch()
 
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     }
     const handleUpdateBtn = async (id) => {
@@ -34,7 +34,7 @@ const ApplicationRow = ({ application, refetch }) => {
             const { data } = await axiosSecure.get(`/applications/${id}`)
             setApplcation(data)
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     };
 

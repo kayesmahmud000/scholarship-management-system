@@ -18,13 +18,13 @@ const AppliedScholarRow = ({ application, refetch }) => {
     const handleStatusChange = async (newStatus) => {
 
         if (newStatus === status) return
-        console.log(newStatus)
+        // console.log(newStatus)
         try {
             await axiosSecure.patch(`/application/new-status/${application._id}`, { status: newStatus })
             toast.success('Application status updated')
             refetch()
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
 
     }
@@ -36,7 +36,7 @@ const AppliedScholarRow = ({ application, refetch }) => {
             toast.success('Application is Canceled')
             refetch()
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
 
 

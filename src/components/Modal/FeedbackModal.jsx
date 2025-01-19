@@ -15,14 +15,14 @@ const FeedbackModal = ({isOpen, application, refetch,setFeedbackModal}) => {
     const[feedback, setFeedback]=useState('')
    
       const handleFeedback= async()=>{
-        console.log(application._id)
-        console.log(feedback)
+        // console.log(application._id)
+        // console.log(feedback)
         try{
             await axiosSecure.patch(`/application/${application._id}`, {feedback})
             toast.success('Feedback send success!')
             refetch()
         }catch (err){
-            console.logI(err)
+            // console.logI(err)
         }finally{
             setFeedbackModal(false)
         }

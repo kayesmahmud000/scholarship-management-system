@@ -15,7 +15,7 @@ const ManageScholarship = () => {
             return data
         }
     })
-    console.log(allScholarship)
+    // console.log(allScholarship)
     if(isLoading) return <LoadingSpinner/>
     return (
         <div className='container mx-auto px-4 sm:px-8'>

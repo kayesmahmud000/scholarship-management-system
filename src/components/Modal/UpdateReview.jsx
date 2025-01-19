@@ -35,13 +35,13 @@ const UpdateReview = ({ refetch, isOpen, setIsEditModalOpen, review }) => {
             comment: comments,
             rating
         }
-        console.log(updateReview)
+        // console.log(updateReview)
         try{
             await axiosSecure.put(`/review/${_id}`, updateReview)
             refetch()
             toast.success('Review updated')
         }catch (err){
-            console.log(err)
+            // console.log(err)
         }finally{
             setIsEditModalOpen(false)
         }

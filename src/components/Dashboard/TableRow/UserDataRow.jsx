@@ -9,7 +9,7 @@ const UserDataRow = ({ refetch, user, }) => {
    
     const handleRoleChange= async(newRole)=>{
         if(user?.role === newRole)return
-        console.log(newRole)
+        // console.log(newRole)
 
         
         try{
@@ -17,7 +17,7 @@ const UserDataRow = ({ refetch, user, }) => {
             refetch()
             toast.success(`${user?.email} now a ${newRole}`) 
         }catch(err){
-            console.log(err?.response?.data?.massage)
+            // console.log(err?.response?.data?.massage)
         }
 
     }
@@ -31,7 +31,7 @@ const UserDataRow = ({ refetch, user, }) => {
 
 
         }catch (err){
-            console.log(err)
+            // console.log(err)
 
         }
     }

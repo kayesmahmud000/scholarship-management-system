@@ -24,22 +24,22 @@ const SignUp = () => {
             const password= data?.password
             const name =data?.name
             const imageFile= data?.image[0]
-            console.log(imageFile)
+            // console.log(imageFile)
             const photoURL= await imageUpload(imageFile) 
-            console.log(photoURL)
+            // console.log(photoURL)
             try{
                 //create user Account
 
              const result=  await createUser(email, password)
              await updateUserProfile( name, photoURL)
 
-             console.log(result)
+            //  console.log(result)
              await saveUser({...result?.user, displayName:name, photoURL})
              navigate('/')
              
              toast.success('Sign Up success')
             }catch (err){
-                console.log(err)
+                // console.log(err)
                 toast.error(err?.message)
             }finally{
               setLoading(false)

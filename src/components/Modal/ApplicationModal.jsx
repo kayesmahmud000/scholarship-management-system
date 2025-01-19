@@ -27,7 +27,7 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
        const photoFile= form.photo.files[0]
      
                const imageUrl = await imageUpload(photoFile)
-       console.log(imageUrl)
+      //  console.log(imageUrl)
 
     const scholarInfo={
       scholarId:scholar._id,
@@ -57,14 +57,14 @@ const ApplicationModal = ({ setIsEditModalOpen,  scholar,  isOpen ,}) => {
         
         
       };
-      console.log(applicationData)
+      // console.log(applicationData)
       try{
         // post the application on db application collection
         await axiosSecure.post('/application', applicationData)
         toast.success('Application Successful!')
         navigate('/dashboard/myApplication')
       }catch (err){
-        console.log(err)
+        // console.log(err)
       }finally{
         setLoading(false)
       }

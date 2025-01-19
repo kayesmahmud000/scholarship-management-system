@@ -29,7 +29,7 @@ const CheckOutFrom = ({scholar}) => {
            }
         
       }, [scholar, axiosSecure])
-      console.log(clientSecret)
+      // console.log(clientSecret)
 
 
   
@@ -66,9 +66,9 @@ const CheckOutFrom = ({scholar}) => {
     if (error) {
         setProcessing(false)
         toast.error('Payment failed')
-      console.log('[error]', error);
+      // console.log('[error]', error);
     } else {
-      console.log('[PaymentMethod]', paymentMethod);
+      // console.log('[PaymentMethod]', paymentMethod);
     }
 
     const {paymentIntent, error: confirmError}= await stripe.confirmCardPayment(clientSecret, {
@@ -87,7 +87,7 @@ const CheckOutFrom = ({scholar}) => {
         toast.success('Payment successful!')
         setIsEditModalOpen(true)
       }
-      console.log(paymentIntent)
+      // console.log(paymentIntent)
   };
 
   return (

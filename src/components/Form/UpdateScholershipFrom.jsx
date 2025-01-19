@@ -35,14 +35,14 @@ const UpdateScholershipFrom = ({ scholarship, refetch, setIsEditModalOpen }) => 
             serviceCharge: parseInt(form.serviceCharge.value),
             applicationDeadline: form.applicationDeadline.value,
         };
-        console.log(scholarshipData)
+        // console.log(scholarshipData)
 
         try{
             await axiosSecure.put(`/scholar/${_id}`, scholarshipData)
             toast.success('Scholarship Update successful!')
 
         }catch (err){
-            console.log(err)
+            // console.log(err)
         }finally{
             setIsEditModalOpen(false)
             refetch()

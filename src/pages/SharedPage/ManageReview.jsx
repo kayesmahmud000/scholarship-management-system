@@ -18,19 +18,19 @@ const ManageReview = () => {
         }
     })
     const handleDelete= async(id)=>{
-        console.log(id)
+        // console.log(id)
         try{
             await axiosSecure.delete(`/review/${id}`)
         toast.success("Review delete successful!")
         refetch()
         }catch (err){
-            console.log(err)
+            // console.log(err)
         }
 
     }
 
     if(isLoading) return <LoadingSpinner/>
-    console.log(reviews)
+    // console.log(reviews)
     return (
         <div className="max-w-6xl mx-auto">
             <PageHelmet title={'Reviews | Dashboard'}/>

@@ -31,14 +31,14 @@ const ApplicationUpdateModal = ({ refetch,applcation, isOpen, setIsEditModalOpen
             studyGap: form.studyGap.value ,
             sscResult: form.sscResult.value,
         }
-        console.log(updateData)
+        // console.log(updateData)
         try{
             await axiosSecure.put(`/application/${applcation._id}`, updateData)
             toast.success('Information update successful!')
             setLoading(false)
             refetch()
         }catch (err){
-            console.log(err)
+            // console.log(err)
 
         }finally{
             setIsEditModalOpen(false)

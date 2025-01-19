@@ -19,7 +19,7 @@ const MyApplication = () => {
         }
     });
     
-    console.log(applications);
+    // console.log(applications);
     if (isLoading) return <LoadingSpinner/>;
     
    

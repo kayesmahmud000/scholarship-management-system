@@ -18,13 +18,13 @@ const ReviewRow = ({review, refetch}) => {
         }=review||{}
 
         const handleDelete= async()=>{
-            console.log(review._id)
+            // console.log(review._id)
             try{
                 await axiosSecure.delete(`/review/${_id}`)
                 toast.success('Review deleted successful!')
                 refetch()
             }catch (err){
-                console.log(err)
+                // console.log(err)
             }
         }
         // const handleUpdateBtn=()=>{

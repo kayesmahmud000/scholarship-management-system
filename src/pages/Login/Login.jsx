@@ -27,7 +27,7 @@ const Login = () => {
             toast.success('Login success')
 
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             toast.error('Login failed')
         }finally{
             setLoading(false)

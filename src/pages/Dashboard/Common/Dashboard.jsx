@@ -8,7 +8,7 @@ import PageHelmet from "../../../components/PageHelmet";
 
 const Dashboard = () => {
     const [role, isLoading]= useRole()
-    console.log(role)
+    // console.log(role)
 
   if(isLoading){
     return <LoadingSpinner></LoadingSpinner>

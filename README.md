@@ -4,7 +4,7 @@
 The Scholarship Management System is designed to simplify and streamline the process of managing and applying for scholarships. This platform enables users to explore available scholarships, submit applications, and track their application status seamlessly.
 
 ## Live URL
-You can access the live application at: [SCHOLAR TRACK PRO](https://moha-milon-projects.firebaseapp.com/)
+You can access the live application at: [SCHOLAR TRACK PRO](https://moha-milon-projects.web.app/)
 
 ## Key Features
 - User Authentication (Login/Sign-up)

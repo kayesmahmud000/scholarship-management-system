@@ -4,7 +4,7 @@ import { ImSpinner } from 'react-icons/im';
 
 const ApplicationForm = ({ setIsEditModalOpen, loading, handleApplication,   scholar }) => {
     
-    console.log(scholar)
+    // console.log(scholar)
    
     return (
         <div className="min-h-screen max-w-7xl mx-auto  flex items-center justify-center bg-[#1A1423] text-white lg:p-6 p-2">

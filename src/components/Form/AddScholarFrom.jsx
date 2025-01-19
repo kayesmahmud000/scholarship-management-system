@@ -50,7 +50,7 @@ const AddScholarFrom = () => {
             await axiosSecure.post('/scholarship', scholarshipData)
             toast.success('New scholarship added successful! ')
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         } finally {
             setLoading(false)
         }

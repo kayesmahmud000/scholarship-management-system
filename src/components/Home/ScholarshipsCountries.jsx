@@ -13,7 +13,7 @@ const ScholarshipsCountries = () => {
         }
     })
 
-    console.log(countries)
+    // console.log(countries)
     return (
         <div className="flex flex-col-reverse lg:flex-row lg:h-[500px] py-5 bg-[#2C2536]  my-10 items-center justify-around">
             <div  data-aos="fade-right"

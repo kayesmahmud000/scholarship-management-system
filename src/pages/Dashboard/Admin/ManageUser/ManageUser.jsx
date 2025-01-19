@@ -29,13 +29,13 @@ const ManageUser = () => {
       setFilteredUsers(filtered);
     }
   }, [selectedRole, allUsers]);
-  console.log(selectedRole)
+  // console.log(selectedRole)
 
 
 
 
 
-  console.log(allUsers)
+  // console.log(allUsers)
   if (isLoading) return <LoadingSpinner></LoadingSpinner>
   return (
     <div className='max-w-7xl mx-auto px-4 sm:px-8' >

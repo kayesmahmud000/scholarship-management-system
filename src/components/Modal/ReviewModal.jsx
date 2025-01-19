@@ -15,13 +15,13 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const ReviewModal = ({ application, isOpen, setIsReviewModalOpen }) => {
-    console.log(application?._id)
+    // console.log(application?._id)
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
     const {user}=useAuth()
     const axiosSecure= useAxiosSecure()
     const navigate= useNavigate()
-    console.log(rating, comment)
+    // console.log(rating, comment)
     // const [reviewData, setReviewData] = useState({
 
     // })
@@ -37,7 +37,7 @@ const ReviewModal = ({ application, isOpen, setIsReviewModalOpen }) => {
             universityId: application?.scholarInfo?.scholarId,
             reviewDate: new Date().toISOString().split('T')[0]
         }
-        console.log(reviewData)
+        // console.log(reviewData)
         try{
             await axiosSecure.post('/review', reviewData)
 
@@ -47,7 +47,7 @@ const ReviewModal = ({ application, isOpen, setIsReviewModalOpen }) => {
             navigate('/dashboard/myReview')
 
         }catch (err){
-           console.log(err?.response?.data?.massage)
+        //    console.log(err?.response?.data?.massage)
 
         }
 

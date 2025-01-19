@@ -13,7 +13,7 @@ const ScholarshipRow = ({ scholarship, refetch }) => {
     // const [scholar, setScholar] = useState({})
     const axiosSecure = useAxiosSecure()
     const { scholarshipName, universityName, subjectCategory, _id, applicationFees, degree } = scholarship || {};
-console.log(scholarship)
+// console.log(scholarship)
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -35,7 +35,7 @@ console.log(scholarship)
                     });
                   
                 } catch (err) {
-                    console.log(err)
+                    // console.log(err)
                 }finally{
                     refetch()
                 }

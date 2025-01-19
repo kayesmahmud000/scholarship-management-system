@@ -18,7 +18,7 @@ const LatestScholarships = () => {
     })
 
     if(isLoading) return <LoadingSpinner/>
-    console.log(latestScholars)
+    // console.log(latestScholars)
     return (
         <div className="my-16">
           
