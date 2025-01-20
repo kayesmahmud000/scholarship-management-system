@@ -1,4 +1,4 @@
-import { FaArrowRight, FaStar } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const ScholarCard = ({ scholarship }) => {
     <div
       className="relative bg-[#1A1423] text-white p-6 rounded-xl shadow-lg border border-purple-600 
         hover:shadow-2xl transform hover:scale-105 transition-all duration-500 flex flex-col justify-between h-[450px]"
-    data-aos="zoom-in"
+    data-aos="zoom-out"
      data-aos-duration="3000"
     >
       {/* University Logo */}

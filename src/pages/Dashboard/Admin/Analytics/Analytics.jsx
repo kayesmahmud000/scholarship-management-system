@@ -7,7 +7,7 @@ import PageHelmet from "../../../../components/PageHelmet";
 
 const Analytics = () => {
     const axiosSecure= useAxiosSecure()
-    const {data:chartDatas =[], isLoading}=useQuery({
+    const {data:chartDatas =[]}=useQuery({
         queryKey:['chartData'],
         queryFn: async()=>{
             const {data}= await axiosSecure.get('/scholarship-category-states')
@@ -27,7 +27,7 @@ const Analytics = () => {
     //     { name: 'Group D', value: 200 },
     //   ];
       
-      const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
       
       const RADIAN = Math.PI / 180;
       const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -61,7 +61,7 @@ const Analytics = () => {
             fill="#8884d8"
             dataKey="value"
           >
-            {piChartData.map((entry, index) => (
+            {piChartData.map(( index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
             

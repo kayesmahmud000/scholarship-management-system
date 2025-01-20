@@ -1,7 +1,6 @@
 import { Navigate } from "react-router-dom";
 import useRole from "../../../hooks/useRole";
-import LoadingSpinner from "../../../components/LoadingSpinner";
-import ManageUser from "../Admin/ManageUser/ManageUser";
+import LoadingSpinner from "../../../components/LoadingSpinner";;
 import Analytics from "../Admin/Analytics/Analytics";
 import PageHelmet from "../../../components/PageHelmet";
 

@@ -19,10 +19,13 @@ import ScholarshipDetails from "../pages/ScholarshipDetails/ScholarshipDetails";
 import Payment from "../pages/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import SharedRoute from "./SharedRoute";
-import Dashboard from "../pages/Dashboard/Common/Dashboard";
+// import Dashboard from "../pages/Dashboard/Common/Dashboard";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AppliedScholarship from "../pages/SharedPage/AppliedScholarship";
+import Dashboard from "../pages/Dashboard/Common/Dashboard";
 import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
+// import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
+// import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
 
 const router = createBrowserRouter([
     {
@@ -61,7 +64,7 @@ const router = createBrowserRouter([
     //dashboard
     {
         path:'/dashboard',
-        element:<PrivateRoute>:<DashboardLayout/></PrivateRoute>,
+        element:<PrivateRoute><DashboardLayout/></PrivateRoute>,
         children:[
             //dashboard menu
             {

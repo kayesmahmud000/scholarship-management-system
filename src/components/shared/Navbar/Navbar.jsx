@@ -13,7 +13,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
     const { signout, user, setUser, loading } = useAuth()
-    const [role, isLoading]= useRole()
+    // const [role, isLoading]= useRole()
     useEffect(() => {
         const handleScroll = () => {
             setScroll(window.scrollY > 50);
@@ -33,15 +33,11 @@ const Navbar = () => {
             })
 
     }
-    if(loading && isLoading) return <LoadingSpinner/>
+    if(loading) return <LoadingSpinner/>
     const link = <>
         <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300  underline u  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/allScholar"}>All Scholarship</NavLink></li>
-       {
-        role ==='admin'?  <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/dashboard"}> Admin Dashboard</NavLink></li>: <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/dashboard"}>Dashboard</NavLink></li>
-
-
-       }
+        <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/dashboard"}>Dashboard</NavLink></li>
 
     </>
    

@@ -15,9 +15,9 @@ const ScholarshipsCountries = () => {
 
     // console.log(countries)
     return (
-        <div className="flex flex-col-reverse lg:flex-row lg:h-[500px] py-5 bg-[#2C2536]  my-10 items-center justify-around">
-            <div  data-aos="fade-right"
-                            data-aos-duration="2000">
+        
+        <div className="flex  flex-col-reverse  lg:flex-row lg:h-[500px] py-5 bg-[#2C2536]  my-10 items-center justify-around">
+            <div  >
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  mx-auto gap-3 p-5">
                     {
                         countries.map(country=><Link to={'/allScholar'}>
@@ -38,8 +38,7 @@ const ScholarshipsCountries = () => {
                     }
                 </div>
             </div>
-            <div  data-aos="fade-left"
-                            data-aos-duration="2000">
+            <div >
                 <div>
                     <h2 className= " text-4xl lg:text-6xl text-center p-5 mx-auto lg:w-5/6 font-bold">Scholarships Awarding Countries</h2>
                     <p className="text-center mx-auto w-5/6">Find Scholarships Offered by Countries Worldwide for Your Academic Goals.</p>
