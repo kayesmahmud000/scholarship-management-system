@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AiOutlineMenu } from 'react-icons/ai';
 import useAuth from '../../../hooks/useAuth';
 import toast from 'react-hot-toast';
-import useRole from '../../../hooks/useRole';
+// import useRole from '../../../hooks/useRole';
 import LoadingSpinner from '../../LoadingSpinner';
 
 const Navbar = () => {
@@ -37,7 +37,13 @@ const Navbar = () => {
     const link = <>
         <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300  underline u  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/"}>Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/allScholar"}>All Scholarship</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/dashboard"}>Dashboard</NavLink></li>
+       {
+         user?.email && <>
+          <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/dashboard"}>Dashboard</NavLink></li>
+          <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/contact"}>Contact Us</NavLink></li>
+         </>
+       }
+        <li><NavLink className={({ isActive }) => isActive ? " text-yellow-300 underline  px-3 py-2  text-sm lg:text-lg" : " mb-4 px-3 text-sm lg:text-lg"} to={"/about"}>About Us</NavLink></li>
 
     </>
    

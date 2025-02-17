@@ -24,6 +24,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AppliedScholarship from "../pages/SharedPage/AppliedScholarship";
 import Dashboard from "../pages/Dashboard/Common/Dashboard";
 import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
+import Contactpage from "../pages/Contactpage/Contactpage";
+import AboutPage from "../pages/AboutPage/AboutPage";
 // import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
 // import Analytics from "../pages/Dashboard/Admin/Analytics/Analytics";
 
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
             element:<AllScholar/>,
             // loader: ()=>fetch(`${import.meta.env.VITE_API_URL}/scholar-count`)
            
+        },
+        {
+            path:"contact",
+            element:<Contactpage/>,
+        },
+        {
+            path:"about",
+            element:<AboutPage/>,
         },
         {
             path:"scholarshipDetails/:id",
