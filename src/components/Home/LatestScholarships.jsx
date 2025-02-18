@@ -24,7 +24,7 @@ const LatestScholarships = () => {
           
             <Heading title={'Top Scholarships'} subtitle={' Explore the most prestigious scholarships available to boost your academic journey.'}/>
 
-            <div className="grid  grid-cols-1  gap-5 my-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid  grid-cols-1  gap-5 my-10 lg:gap-10 md:grid-cols-2 lg:grid-cols-4">
                 {
                  latestScholars&& latestScholars.length>0 &&   latestScholars.map(scholarship=><ScholarCard key={scholarship._id} scholarship={scholarship} />)
                 }
