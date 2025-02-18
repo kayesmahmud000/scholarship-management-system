@@ -5,6 +5,7 @@ import ScholarshipsCountries from '../../components/Home/ScholarshipsCountries';
 import FaQ from '../../components/Home/FaQ';
 import PageHelmet from '../../components/PageHelmet';
 import ScholarshipCategory from '../../components/Home/scholarshipCategory';
+import SubjectCategory from '../../components/Home/SubjectCategory';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
           <LatestScholarships/>
           <ScholarshipsCountries/>
           <ScholarshipCategory/>
+          <SubjectCategory/>
           <FaQ/>
         </div>
     );
