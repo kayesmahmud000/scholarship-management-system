@@ -7,6 +7,7 @@ import PageHelmet from '../../components/PageHelmet';
 import ScholarshipCategory from '../../components/Home/scholarshipCategory';
 import SubjectCategory from '../../components/Home/SubjectCategory';
 import ApplicationProcess from '../../components/Home/ApplicationProcess ';
+import ReviewSection from '../../components/Home/ReviewSection';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
           <ScholarshipCategory/>
           <SubjectCategory/>
         <ApplicationProcess/>
+        <ReviewSection/>
           <FaQ/>
         </div>
     );
