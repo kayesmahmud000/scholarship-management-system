@@ -56,7 +56,7 @@ const Contactpage = () => {
                     </div>
 
                 </div>
-                <div className="card   w-full  max-w-xl shadow-2xl">
+                <div className="card bg-white  w-full  max-w-xl shadow-2xl">
                     <form className="card-body">
                         <div className="form-control">
                             <label className="label">

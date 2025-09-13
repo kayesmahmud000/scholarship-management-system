@@ -41,12 +41,12 @@ const AppliedScholarship = () => {
     <div className='container mx-auto px-4 sm:px-8'>
       <PageHelmet title={'Applications | Dashboard'}/>
         <Heading title={'All Applications'} subtitle={''} />
-      <div className='px-5  flex justify-end bg-[#1A1423]  text-sm' >
+      <div className='px-5  flex justify-end bg-white  text-sm' >
         <select
 
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="p-2 bg-purple-500 transition  duration-100  py-1.5 px-3 text-sm/6 font-semibold text-white  rounded"
+          className="p-2 bg-purple-500 transition  duration-100  py-1.5 px-3 text-sm/6 font-semibold text-black  rounded"
         >
           <option value="all" >All</option>
           <option value="appliedDate" >Application Date</option>
@@ -183,11 +183,11 @@ export default AppliedScholarship;
 
 //   return (
 //     <div className='container mx-auto px-4 sm:px-8'>
-//       <div className='px-5 flex justify-end bg-[#1A1423] text-sm'>
+//       <div className='px-5 flex justify-end bg-white text-sm'>
 //         <select
 //           value={sortOption}
 //           onChange={(e) => setSortOption(e.target.value)}
-//           className="p-2 bg-purple-500 transition duration-100 py-1.5 px-3 text-sm/6 font-semibold text-white rounded"
+//           className="p-2 bg-purple-500 transition duration-100 py-1.5 px-3 text-sm/6 font-semibold text-black rounded"
 //         >
 //           <option disabled>Sort by</option>
 //           <option value="all">All</option>

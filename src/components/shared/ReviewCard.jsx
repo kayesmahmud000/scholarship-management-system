@@ -1,6 +1,6 @@
 const ReviewCard = ({review}) => {
     return (
-        <div className="review-card border h-full p-2 lg:p-4 bg-[#2C2536]  shadow-md rounded-md text-center">
+        <div className="review-card border h-full p-2 lg:p-4 bg-white  shadow-md rounded-md text-center">
             <img
               src={review?.reviewerImage}
               alt={review?.reviewerName}

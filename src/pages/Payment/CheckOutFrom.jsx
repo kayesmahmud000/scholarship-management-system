@@ -110,7 +110,7 @@ const CheckOutFrom = ({scholar}) => {
           },
         }}
       />
-      <button type="submit" className='px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+      <button type="submit" className='px-6 btn text-lg  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-black font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center'disabled={!stripe || !clientSecret || processing}>
        Payment
       </button>

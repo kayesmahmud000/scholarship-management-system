@@ -26,7 +26,7 @@ const Sidebar = () => {
 
         <>
             {/* Small Screen Navbar */}
-            <div className=' bg-[#1e172b]   flex justify-between md:hidden'>
+            <div className=' bg-white   flex justify-between md:hidden'>
                 <div>
                     <div className='block cursor-pointer p-4 font-bold'>
                         <Link to='/'>
@@ -48,7 +48,7 @@ const Sidebar = () => {
 
             {/* Sidebar */}
             <div
-                className={`z-10 md:fixed bg-[#1e172b] flex flex-col justify-between overflow-x-hidden w-64 md:w-80 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
+                className={`z-10 md:fixed bg-white flex flex-col justify-between overflow-x-hidden w-64 md:w-80 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${isActive && '-translate-x-full'
                     }  md:translate-x-0  transition duration-200 ease-in-out`}
             >
                 <div>
@@ -91,7 +91,7 @@ const Sidebar = () => {
 
                     <button
 
-                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500 text-white    transition-colors duration-300   transform'
+                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500 text-black    transition-colors duration-300   transform'
                     >
                         <FaHome className='w-5 h-5' />
                         <Link to={'/'}>
@@ -100,7 +100,7 @@ const Sidebar = () => {
                     </button>
                     <button
 
-                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500    transition-colors duration-300  text-white transform'
+                        className='flex w-full items-center px-4 py-2 mt-5  hover:bg-purple-500    transition-colors duration-300  text-black transform'
                     >
                         <GrLogout className='w-5 h-5' />
 

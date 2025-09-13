@@ -32,7 +32,7 @@ const LatestScholarships = () => {
 
             <div className="flex justify-center items-center">
                 <Link to={'/allScholar'}>
-                 <button className="px-5 py-3 flex items-center justify-center gap-2 bg-purple-500 text-white font-bold rounded-full 
+                 <button className="px-5 py-3 flex items-center justify-center gap-2 bg-purple-500 text-black font-bold rounded-full 
                           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
                          All Scholarship <FaArrowRight/>
                         </button>

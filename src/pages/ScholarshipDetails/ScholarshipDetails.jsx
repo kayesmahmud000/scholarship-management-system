@@ -35,7 +35,7 @@ const ScholarshipDetails = () => {
             <PageHelmet title={'Scholarship Details'}/>
             <Heading title={'Unlock Your Academic Journey'} subtitle={'Explore comprehensive scholarship details including university rankings, funding options, and eligibility criteria to shape your future success.'} />
 
-            <div className="flex flex-col items-center justify-center bg-[#1A1423] text-white p-8 rounded-lg shadow-lg space-y-6 md:space-y-0 md:space-x-10" data-aos="zoom-in"
+            <div className="flex flex-col items-center mt-6 justify-center bg-white text-black p-8 rounded-lg shadow-lg space-y-6 md:space-y-0 md:space-x-10" data-aos="zoom-in"
                             data-aos-duration="2000">
 
                 {/* Left Side - University Image */}
@@ -60,50 +60,50 @@ const ScholarshipDetails = () => {
 
                     {/* Scholarship Info Table */}
                     <div className="overflow-hidden rounded-lg shadow-lg border border-gray-600">
-                        <table className="table-auto w-full text-left bg-[#1A1423] border-collapse">
+                        <table className="table-auto w-full text-left  border-collapse">
                             <tbody>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold ">Scholarship Name</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold ">Scholarship Name</td>
                                     <td>{scholarshipName}</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Scholarship Category</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Scholarship Category</td>
                                     <td>{scholarshipCategory}</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Degree</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Degree</td>
                                     <td>{degree}</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Location</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Location</td>
                                     <td> {universityCity} , {universityCountry} </td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Application Deadline</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Application Deadline</td>
                                     <td>{applicationDeadline}</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Subject Name</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Subject Name</td>
                                     <td>{subjectCategory}</td>
                                 </tr>
                                 <tr className="border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Stipend</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Stipend</td>
                                     <td>N/A</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Tuition Fees</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Tuition Fees</td>
                                     <td>${tuitionFees || 'N/A'}</td>
                                 </tr>
                                 <tr className="  border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Service Charge</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Service Charge</td>
                                     <td>${serviceCharge}</td>
                                 </tr>
                                 <tr className="  border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Application Fees</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Application Fees</td>
                                     <td>${applicationFees}</td>
                                 </tr>
                                 <tr className=" border-b border-gray-600 transition duration-300">
-                                    <td className="px-4 py-3  text-lg text-purple-400 font-semibold">Post Date</td>
+                                    <td className="px-4 py-3  text-lg text-purple-600 font-semibold">Post Date</td>
                                     <td>{scholarshipPostDate}</td>
                                 </tr>
                             </tbody>
@@ -114,13 +114,13 @@ const ScholarshipDetails = () => {
                     <div className="mt-8 flex justify-end">
                         {user && user.email && role === 'user' ? (
                             <Link to={`/payment/${_id}`}>
-                                <button className="px-6 btn text-lg bg-purple-500 md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+                                <button className="px-6 btn text-lg bg-purple-500 md:rounded-full md:px-10 md:pb-1 border-none text-black font-bold rounded-lg 
             hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
                                     Apply Now <FaArrowRight />
                                 </button>
                             </Link>
                         ) : (
-                            <button disabled className="px-6 btn text-lg bg-gray-400 md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+                            <button disabled className="px-6 btn text-lg bg-gray-400 md:rounded-full md:px-10 md:pb-1 border-none text-black font-bold rounded-lg 
         cursor-not-allowed">
                                 Apply Now <FaArrowRight />
                             </button>
@@ -133,7 +133,7 @@ const ScholarshipDetails = () => {
                 </div>
             </div>
             <div className="my-16 text-center">
-                <h2 className="text-3xl font-bold text-purple-400 mb-6">User Reviews</h2>
+                <h2 className="text-3xl font-bold  mb-6">User Reviews</h2>
                 {reviews && reviews.length > 0 ? (
                     <Swiper
                         effect={'coverflow'}
@@ -147,7 +147,7 @@ const ScholarshipDetails = () => {
                         className="mySwiper lg:h-[350px] lg:w-[1400px] mx-auto"
                     >
                         {reviews.map((review, index) => (
-                            <SwiperSlide key={index} className=" lg:p-6 rounded-lg text-white">
+                            <SwiperSlide key={index} className=" lg:p-6 rounded-lg text-black">
                                 <ReviewCard review={review} />
 
                             </SwiperSlide>

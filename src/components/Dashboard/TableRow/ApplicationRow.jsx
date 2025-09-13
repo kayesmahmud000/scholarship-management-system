@@ -41,31 +41,31 @@ const ApplicationRow = ({ application, refetch }) => {
     return (
         <>
             <tr className="text-center">
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.universityName}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.universityCountry}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-xs text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-xs text-black">
                     {application?.feedback ? application.feedback:"No feedback"}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.subjectCategory}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.degree}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     $ {scholarInfo?.applicationFees}
                 </td>
-                <td className="py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="py-5 border-b border-gray-200 bg-white text-sm text-black">
                     $ {scholarInfo?.serviceCharge}
                 </td>
-                <td className="py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {status}
                 </td>
-                <td className="py-10 lg:py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="py-10 lg:py-5 flex gap-7 border-b border-gray-200 bg-white text-sm">
                     <Link to={`/scholarshipDetails/${scholarInfo?.scholarId}`}>
                         <button className="cursor-pointer font-semibold">
                             <FaRegEye size={30} />
@@ -80,7 +80,7 @@ const ApplicationRow = ({ application, refetch }) => {
                         <MdDeleteForever size={34} />
                     </button>
                 </td>
-                <td className="px-5 py-7 lg:py-5 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="px-5 py-7 lg:py-5 border-b border-gray-200 bg-white text-sm">
                     <button onClick={() => setIsReviewModalOpen(true)} className="cursor-pointer font-semibold">
                         <FcRating size={30} />
                     </button>

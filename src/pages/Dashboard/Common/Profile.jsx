@@ -10,10 +10,10 @@ const Profile = () => {
     const [role, isLoading]=useRole()
     if(loading && isLoading) return <LoadingSpinner/>
     return (
-        <div className="h-screen flex items-center justify-center bg-[#1A1423] text-white p-6" data-aos="zoom-in"
+        <div className="h-screen flex items-center justify-center  text-black p-6" data-aos="zoom-in"
         data-aos-duration="2000">
             <PageHelmet title={'Profile'}/>
-            <div className="bg-[#2C2536] p-8 rounded-lg shadow-lg w-full max-w-md text-center border border-gray-600">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center border border-gray-600">
                 <h1 className="text-4xl font-bold mb-6">{role==='admin'? 'Admin Profile':'My Profile'}</h1>
 
                 {/* User Image */}
@@ -44,7 +44,7 @@ const Profile = () => {
                 {/* Action Button */}
                 <Link to={'/dashboard/updateProfile'}>
                 <button
-                    className="mt-6 bg-purple-600 hover:bg-yellow-400 hover:text-black text-white font-semibold py-2 px-6 rounded-full transition duration-300"
+                    className="mt-6 bg-purple-600 hover:bg-yellow-400 hover:text-black text-black font-semibold py-2 px-6 rounded-full transition duration-300"
                 >
                    Update Profile
                 </button>

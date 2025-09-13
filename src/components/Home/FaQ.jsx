@@ -5,7 +5,7 @@ const FaQ = () => {
         <div className="my-16 mx-auto">
         <Heading title={"Frequently Asked Questions"} subtitle={"Scholarships"} />
       
-        <div className="max-w-4xl my-10 mx-auto bg-[#2C2536] shadow-lg rounded-lg p-6" >
+        <div className="max-w-4xl my-10 mx-auto bg-white shadow-lg rounded-lg p-6" >
           <div className="collapse collapse-arrow border-b border-b-gray-400 rounded-lg mb-4">
             <input type="radio" name="faq-accordion" defaultChecked />
             <div className="collapse-title text-lg font-semibold  p-4 rounded-t-lg">

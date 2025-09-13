@@ -50,7 +50,7 @@ const UpdateScholershipFrom = ({ scholarship, refetch, setIsEditModalOpen }) => 
 
     }
     return (
-        <div className="min-h-screen max-w-7xl mx-auto flex items-center justify-center bg-[#1A1423] text-white p-6">
+        <div className="min-h-screen max-w-7xl mx-auto flex items-center justify-center bg-white text-black p-6">
             <form
                 onSubmit={handleUpdate }
                 className="w-full bg-[#2C2536] p-8 rounded-lg shadow-lg border border-gray-600"
@@ -179,7 +179,7 @@ const UpdateScholershipFrom = ({ scholarship, refetch, setIsEditModalOpen }) => 
 
                 </div>
                 {/* Submit Button */}
-                <button type="submit" className="w-full bg-purple-500 hover:bg-yellow-400 text-white py-3 rounded-lg font-bold hover:text-black transition duration-300 ">
+                <button type="submit" className="w-full bg-purple-500 hover:bg-yellow-400 text-black py-3 rounded-lg font-bold hover:text-black transition duration-300 ">
                     {loading ? (
                         <ImSpinner className='animate-spin m-auto' />
 

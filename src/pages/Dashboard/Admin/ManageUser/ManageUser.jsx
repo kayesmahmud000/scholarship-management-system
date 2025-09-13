@@ -42,11 +42,11 @@ const ManageUser = () => {
      <PageHelmet title={'Manage User | Dashboard'}/>
         <Heading title={'All Users'} subtitle={' '}/>
 
-      <div className='px-5  flex justify-end bg-[#1A1423]  text-sm'>
+      <div className='px-5  flex justify-end   text-sm'>
         <select
           defaultValue={'Sort By'}
           onChange={(e) => setSelectedRole(e.target.value)}
-          className="p-2 bg-purple-500 transition  duration-100  py-1.5 px-3 text-sm/6 font-semibold text-white  rounded"
+          className="p-2 bg-purple-500 transition  duration-100  py-1.5 px-3 text-sm/6 font-semibold text-black  rounded"
         >
            <option disabled >Sort by</option>
           <option value="all" >All</option>
@@ -65,26 +65,26 @@ const ManageUser = () => {
                 <tr>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-gray-200  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
                     Name
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-gray-200  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
                     Email
                   </th>
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-gray-200  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
                     Role
                   </th>
 
                   <th
                     scope='col'
-                    className='px-5 py-3 bg-gray-200  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                    className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                   >
                     Action
                   </th>

@@ -38,17 +38,17 @@ const UserDataRow = ({ refetch, user, }) => {
     return (
         <>
          <tr >
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]   text-sm'>
-                <p className='text-white whitespace-no-wrap'>{user?.name}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white   text-sm'>
+                <p className='text-black whitespace-no-wrap'>{user?.name}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
-                <p className='text-white whitespace-no-wrap'>{user?.email}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white  text-sm'>
+                <p className='text-black whitespace-no-wrap'>{user?.email}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white  text-sm'>
                 <select
                     defaultValue={user?.role || 'user'}
                     onChange={(e) => handleRoleChange(e.target.value)}
-                    className="p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                    className="p-2 bg-gray-800 text-black border border-gray-600 rounded"
                 >
                     <option value="user" >User</option>
                     <option value="moderator">Moderator</option>
@@ -56,7 +56,7 @@ const UserDataRow = ({ refetch, user, }) => {
                 </select>
             </td>
 
-            <td className='px-5 py-8 lg:py-5 border-b border-gray-200 bg-[#1A1423]  text-sm'>
+            <td className='px-5 py-8 lg:py-5 border-b border-gray-200 bg-white  text-sm'>
                 <button
                     onClick={() => handleDelete(user?._id)}
                     className=' cursor-pointer font-semibold '

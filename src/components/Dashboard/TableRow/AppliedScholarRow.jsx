@@ -44,7 +44,7 @@ const AppliedScholarRow = ({ application, refetch }) => {
     return (
         <>
             <tr className="">
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     <div className="flex items-center gap-3">
                         <div className="avatar">
                             <div className="mask mask-squircle h-12 w-12">
@@ -59,26 +59,26 @@ const AppliedScholarRow = ({ application, refetch }) => {
                         </div>
                     </div>
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {applicantEmail}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.universityName}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.scholarName}
                 </td>
-                <td className="px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-black">
                     {scholarInfo?.subjectCategory}
                 </td>
 
-                <td className="py-5 px-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="py-5 px-5 border-b border-gray-200 bg-white text-sm text-black">
                     {
                         status=== 'rejected' ? <p className="text-red-400">Canceled</p>:              <select
                         disabled={status==='completed'}
                         defaultValue={status || 'user'}
                         onChange={(e) => handleStatusChange(e.target.value)}
-                        className="p-2 bg-gray-800 text-white border border-gray-600 rounded"
+                        className="p-2 bg-gray-800 text-black border border-gray-600 rounded"
                     >
                         <option value="pending" >Pending</option>
                         <option value=" processing"> Processing</option>
@@ -86,18 +86,18 @@ const AppliedScholarRow = ({ application, refetch }) => {
                     </select>
                     }
                 </td>
-                <td className="py-5 px-5 border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="py-5 px-5 border-b border-gray-200 bg-white text-sm text-black">
                     <button onClick={() => setDetailsModal(true)} className="cursor-pointer font-semibold">Details
                     </button>
                 </td>
 
-                <td className="lg:py-5 py-8 px-5 mx-auto border-b border-gray-200 bg-[#1A1423] text-sm text-white">
+                <td className="lg:py-5 py-8 px-5 mx-auto border-b border-gray-200 bg-white text-sm text-black">
                     <button onClick={() => setFeedbackModal(true)} className="cursor-pointer font-semibold">
                         <MdFeedback size={24} />
                     </button>
 
                 </td>
-                <td className="py-10  px-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm">
+                <td className="py-10  px-5 flex gap-7 border-b border-gray-200 bg-white text-sm">
 
                     <button  onClick={handleCancel} className="cursor-pointer font-semibold">
                         <ImCancelCircle size={24} />

@@ -3,7 +3,7 @@ import logo from '../../../assets/coin.png'
 const Footer = () => {
     return (
         <div>
-           <footer className="footer footer-center bg-[#1e172b]   p-10">
+           <footer className="footer footer-center bg-white   p-10">
                 <aside>
                <div className='flex items-center'>
                <img src={logo} className="-mt-5 w-10 md:w-20" alt="" />

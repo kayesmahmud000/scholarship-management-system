@@ -3,7 +3,7 @@ import PageHelmet from '../../components/PageHelmet';
 
 const ErrorPage = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-[#1A1423]">
+        <div className="flex items-center justify-center min-h-screen bg-white">
             <PageHelmet title={'Error Page'}/>
             <div className="text-center p-8  shadow-xl rounded-lg max-w-xl">
                 <h1 className="text-6xl font-bold text-purple-500">404</h1>
@@ -16,7 +16,7 @@ const ErrorPage = () => {
                         <li><a href="/contact" className="text-purple-500 hover:underline">Contact Us</a></li>
                     </ul>
                 </div>
-                <a href="/contact" className="btn border-none bg-purple-500 text-white font-bold rounded-full 
+                <a href="/contact" className="btn border-none bg-purple-500 text-black font-bold rounded-full 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">
                     Contact Support
                 </a>

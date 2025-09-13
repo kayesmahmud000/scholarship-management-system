@@ -48,7 +48,7 @@ const Navbar = () => {
     </>
    
     return (
-        <div className={`navbar fixed z-50 w-full py-4 transition-all duration-300 ease-in-out ${scroll ? "bg-[#2C2536]    text-white shadow-lg" : "bg-transparent text-white"
+        <div className={`navbar fixed z-50 w-full py-4 transition-all duration-300 ease-in-out ${scroll ? "bg-white    text-black shadow-lg" : "bg-transparent text-black"
             }`}>
 
             <Container>
@@ -90,12 +90,12 @@ const Navbar = () => {
                                 <img src={user?.photoURL} className='w-14 h-14 object-cover rounded-full' alt="User" />
                                 {isHovered && <div className=' flex justify-center  absolute z-10    gap-3 rounded-xl shadow-md bg-[#2C2536] top-10 right-0 -left-5  w-fit p-2  flex-col'>
                                     <span className="display-name lg:text-2xl text-start font-bold">{user?.displayName}</span>
-                                    <button onClick={handleLogOut} className=' btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+                                    <button onClick={handleLogOut} className=' btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-black font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center'>Logout</button></div>
                                 }
 
                             </div> : <div className='flex gap-4'>
-                                <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-white font-bold rounded-lg 
+                                <Link to={'/login'}> <button className="btn btn-sm md:btn-md  bg-purple-500  md:rounded-full md:px-10 md:pb-1 border-none text-black font-bold rounded-lg 
           hover:bg-yellow-300 hover:text-black transition duration-300 text-center">Login</button></Link>
                                 <Link to={'/signUp'} ><button className='btn hidden lg:flex btn-xs md:btn-md rounded-full  hover:bg-yellow-300 hover:text-black transition duration-300 text-center border-none px-5 font-bold'>Register</button></Link>
                             </div>

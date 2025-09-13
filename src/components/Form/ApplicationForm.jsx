@@ -7,7 +7,7 @@ const ApplicationForm = ({ setIsEditModalOpen, loading, handleApplication,   sch
     // console.log(scholar)
    
     return (
-        <div className="min-h-screen max-w-7xl mx-auto  flex items-center justify-center bg-[#1A1423] text-white lg:p-6 p-2">
+        <div className="min-h-screen max-w-7xl mx-auto  flex items-center justify-center bg-white text-black lg:p-6 p-2">
             <form
                 onSubmit={handleApplication }
                 className="w-full bg-[#2C2536] lg:p-8 p-2 rounded-lg shadow-lg border border-gray-600"
@@ -154,7 +154,7 @@ const ApplicationForm = ({ setIsEditModalOpen, loading, handleApplication,   sch
 
                 </div>
                 {/* Submit Button */}
-                <button type="submit" className="w-full bg-purple-500 hover:bg-yellow-400 text-white py-3 rounded-lg font-bold hover:text-black transition duration-300 ">
+                <button type="submit" className="w-full bg-purple-500 hover:bg-yellow-400 text-black py-3 rounded-lg font-bold hover:text-black transition duration-300 ">
                     {loading ? (
                         <ImSpinner className='animate-spin m-auto' />
 

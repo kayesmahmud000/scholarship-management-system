@@ -75,7 +75,7 @@
 //                         onClick={handlePrev}
 //                         title="previous"
 //                         type="button"
-//                         className="inline-flex items-center bg-purple-500 hover:bg-yellow-300 text-white hover:text-black justify-center w-8 h-8 py-0 border-none rounded-md shadow-md"
+//                         className="inline-flex items-center bg-purple-500 hover:bg-yellow-300 text-black hover:text-black justify-center w-8 h-8 py-0 border-none rounded-md shadow-md"
 //                     >
 //                         <svg
 //                             viewBox="0 0 24 24"
@@ -98,7 +98,7 @@
 //                             className={`${
 //                                 currentPage === page
 //                                     ? 'inline-flex items-center justify-center w-8 h-8 text-sm font-semibold border-none rounded shadow-md text-black bg-yellow-300'
-//                                     : 'inline-flex items-center justify-center w-8 h-8 text-sm font-semibold rounded shadow-md text-white border-none bg-purple-500'
+//                                     : 'inline-flex items-center justify-center w-8 h-8 text-sm font-semibold rounded shadow-md text-black border-none bg-purple-500'
 //                             }`}
 //                         >
 //                             {page + 1}
@@ -108,7 +108,7 @@
 //                         onClick={handleNext}
 //                         title="next"
 //                         type="button"
-//                         className="inline-flex items-center bg-purple-500 hover:bg-yellow-300 text-white hover:text-black justify-center w-8 h-8 py-0 border-none rounded-md shadow-md"
+//                         className="inline-flex items-center bg-purple-500 hover:bg-yellow-300 text-black hover:text-black justify-center w-8 h-8 py-0 border-none rounded-md shadow-md"
 //                     >
 //                         <svg
 //                             viewBox="0 0 24 24"
@@ -225,7 +225,7 @@ const AllScholar = () => {
                 <div className="flex justify-center space-x-1 my-10">
                     <button
                         onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
-                        className="bg-purple-500  flex items-center justify-center hover:bg-yellow-300 text-white hover:text-black w-8 h-8 rounded-md"
+                        className="bg-purple-500  flex items-center justify-center hover:bg-yellow-300 text-black hover:text-black w-8 h-8 rounded-md"
                     >
                         <FaArrowLeft/>
                     </button>
@@ -235,7 +235,7 @@ const AllScholar = () => {
                             key={page}
                             onClick={() => setCurrentPage(page)}
                             className={`w-8 h-8 rounded-md ${
-                                currentPage === page ? 'bg-yellow-300 text-black' : 'bg-purple-500 text-white'
+                                currentPage === page ? 'bg-yellow-300 text-black' : 'bg-purple-500 text-black'
                             }`}
                         >
                             {page + 1}
@@ -244,7 +244,7 @@ const AllScholar = () => {
 
                     <button
                         onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))}
-                        className="bg-purple-500 flex items-center justify-center hover:bg-yellow-300 text-white hover:text-black w-8 h-8 rounded-md"
+                        className="bg-purple-500 flex items-center justify-center hover:bg-yellow-300 text-black hover:text-black w-8 h-8 rounded-md"
                     >
                         <FaArrowRight/>
                     </button>

@@ -148,7 +148,7 @@ const UpdateReview = ({ refetch, isOpen, setIsEditModalOpen, review }) => {
 
                                                 {/* Submit Button */}
                                                 <button
-                                                    className="w-full bg-purple-500 hover:bg-yellow-400 text-white py-3 rounded-lg font-bold hover:text-black transition duration-300 "
+                                                    className="w-full bg-purple-500 hover:bg-yellow-400 text-black py-3 rounded-lg font-bold hover:text-black transition duration-300 "
                                                 >
                                                     Update Review
                                                 </button>

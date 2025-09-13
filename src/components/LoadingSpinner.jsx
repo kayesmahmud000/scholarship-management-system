@@ -12,7 +12,7 @@ const LoadingSpinner = () => {
         items-center `}
       >
         <PageHelmet title={'Loading..'}/>
-        <DotLoader size={80} color='white' />
+        <DotLoader size={80} color='purple' />
         {/* <ScaleLoader size={100} color='lime' /> */}
       </div>
     );

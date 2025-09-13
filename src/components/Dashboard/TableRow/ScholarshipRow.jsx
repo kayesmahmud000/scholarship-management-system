@@ -63,22 +63,22 @@ const ScholarshipRow = ({ scholarship, refetch }) => {
 
     return (
         <tr>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
-                <p className='text-white whitespace-no-wrap'>{scholarshipName}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                <p className='text-black whitespace-no-wrap'>{scholarshipName}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
-                <p className='text-white whitespace-no-wrap'>{universityName}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                <p className='text-black whitespace-no-wrap'>{universityName}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
-                <p className='text-white whitespace-no-wrap'>{subjectCategory}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                <p className='text-black whitespace-no-wrap'>{subjectCategory}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
-                <p className='text-white whitespace-no-wrap'>{degree}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                <p className='text-black whitespace-no-wrap'>{degree}</p>
             </td>
-            <td className='px-5 py-5 border-b border-gray-200 bg-[#1A1423] text-sm'>
-                <p className='text-white whitespace-no-wrap'>$ {applicationFees}</p>
+            <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+                <p className='text-black whitespace-no-wrap'>$ {applicationFees}</p>
             </td>
-            <td className='px-5  py-8 lg:py-5 flex gap-7 border-b border-gray-200 bg-[#1A1423] text-sm'>
+            <td className='px-5  py-8 lg:py-5 flex gap-7 border-b border-gray-200 bg-white text-sm'>
                 <Link to={`/scholarshipDetails/${_id}`}>
                     <button className='cursor-pointer font-semibold'>
                         <FaRegEye size={30} />

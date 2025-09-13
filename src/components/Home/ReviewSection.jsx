@@ -53,7 +53,7 @@ const ReviewSection = () => {
            
             <div className="grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {reviews.map((review) => (
-                    <div key={review.id} className="p-6 border border-gray-300 rounded-lg shadow-md">
+                    <div key={review.id} className="p-6 bg-white border border-gray-300 rounded-lg shadow-md">
                         <div className="flex items-center mb-4">
                             <img src={review.image} alt={review.name} className="w-16 h-16 rounded-full mr-4" />
                             <div>

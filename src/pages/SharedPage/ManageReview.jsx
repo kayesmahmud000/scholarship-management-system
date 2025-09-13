@@ -56,7 +56,7 @@ const ManageReview = () => {
                             <h2 className="mb-1 text-xl font-semibold">  University Name: {review?.universityName}</h2>
                             <p> Subject Category : {review?.subjectCategory}</p>
                             <div className="review-rating text-yellow-500 ">
-                             <span className="text-white "> Rating:</span>  {"★".repeat(review?.rating) + "☆".repeat(5 - review?.rating)} {review?.rating}
+                             <span className="text-black "> Rating:</span>  {"★".repeat(review?.rating) + "☆".repeat(5 - review?.rating)} {review?.rating}
                             </div>
                             <p className="text-sm"> Comment : {review?.comment}</p>
                         </div>

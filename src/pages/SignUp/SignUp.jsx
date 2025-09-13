@@ -133,7 +133,7 @@ const SignUp = () => {
             <div>
               <button
                 type='submit'
-                className='bg-[#1e172b] w-full rounded-md py-3 text-white'
+                className='bg-white w-full rounded-md py-3 text-black'
               >
                 
                 {loading ? (

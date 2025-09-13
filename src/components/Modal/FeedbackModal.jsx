@@ -79,7 +79,7 @@ const FeedbackModal = ({isOpen, application, refetch,setFeedbackModal}) => {
                                 {/* Submit Button */}
                                 <button
                                         onClick={handleFeedback}
-                                        className="w-full bg-purple-500 hover:bg-yellow-400 text-white py-3 rounded-lg font-bold hover:text-black transition duration-300 "
+                                        className="w-full bg-purple-500 hover:bg-yellow-400 text-black py-3 rounded-lg font-bold hover:text-black transition duration-300 "
                                     >
                                         Feedback
                                     </button>
